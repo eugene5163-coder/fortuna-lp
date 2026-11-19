@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Предзаказ весна-лето 2027 — 320+ итальянских премиальных брендов · FORTUNA-S</title>
+<meta name="description" content="Предзаказ коллекций одежды, обуви и сумок от 320+ итальянских премиальных брендов под формат вашего магазина без поездки в Италию.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== Maison FORTUNA-S — общая дизайн-система лендингов =====
+   Светлые фоны, антиква Playfair Display для заголовков, Jost для текста.
+   Акцент страницы задаётся переменной --acc в самой странице. */
+:root{
+  --ivory:#FBF8F3; --paper:#FFFDF9; --sand:#F1EBE1; --stone:#E7DFD2; --line:#DCD2C2;
+  --ink:#2B2420; --ink2:#4A413A; --mute:#7A6F64;
+  --acc:#8C6B3F; --acc-soft:#F3ECE0;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:72px}                    /* цель якоря не уходит под закреплённую шапку */
+body{background:var(--ivory);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--acc-soft)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px;margin-left:auto;margin-right:auto}
+.center{text-align:center}
+
+/* Типографика */
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-.005em}
+h1{font-size:clamp(31px,4.2vw,56px);line-height:1.1}
+h2{font-size:clamp(28px,3.8vw,46px);line-height:1.12;margin-bottom:18px}
+h3{font-size:clamp(21px,2.2vw,26px);line-height:1.25}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--acc)}
+.over{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
+.it{font-family:var(--serif);font-style:italic}
+.lead{font-size:19px;line-height:1.6;color:var(--ink2);max-width:600px}
+.center .lead{margin-left:auto;margin-right:auto}
+.small{font-size:14px;color:var(--mute)}
+.rule{width:56px;height:1px;background:var(--acc);border:0;margin:26px 0}
+.center .rule{margin-left:auto;margin-right:auto}
+
+/* Шапка */
+.annonce{background:var(--sand);text-align:center;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);padding:11px 16px}
+.mast{text-align:center;padding:20px 0 18px;border-bottom:1px solid var(--line);background:var(--ivory)}
+.mast svg{width:34px;height:34px;color:var(--acc);margin:0 auto 6px}
+.mast .wm{font:400 19px/1 var(--serif);letter-spacing:.34em;padding-left:.34em}
+.mast .sub{font:500 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-top:8px;padding-left:.3em}
+/* На мобильном шапка в одну строку — первый экран отдаём предложению */
+@media(max-width:700px){
+  .annonce{font-size:10px;letter-spacing:.12em;padding:9px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mast{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 0}
+  .mast svg{width:24px;height:24px;margin:0}
+  .mast .wm{font-size:16px}
+  .mast .sub{display:none}
+}
+
+/* Кнопки и ссылки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:0 38px;background:var(--ink);color:var(--ivory);border:1px solid var(--ink);border-radius:0;text-decoration:none;cursor:pointer;font:500 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .2s,color .2s}
+.btn:hover{background:var(--acc);border-color:var(--acc)}
+.btn.wide{width:100%}
+.btn.ghost{background:transparent;color:var(--ink);margin-top:12px}
+.btn.ghost:hover{background:var(--ink);color:var(--ivory)}
+.link{display:inline-block;font:500 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:7px;border-bottom:1px solid currentColor;transition:color .2s}
+.link:hover{color:var(--acc)}
+.cta-note{font-size:13px;color:var(--mute);margin-top:14px;letter-spacing:.02em}
+
+/* Секции */
+section{padding:88px 0}
+.bg-sand{background:var(--sand)}
+.bg-paper{background:var(--paper)}
+.head{margin-bottom:44px}
+@media(max-width:700px){section{padding:64px 0}.head{margin-bottom:32px}}
+
+/* Разворот фото + текст */
+.split{display:grid;grid-template-columns:1fr;background:var(--paper)}
+.split .ph-col{position:relative;min-height:62vh;overflow:hidden}
+.split .ph-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .tx-col{padding:56px 22px;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:960px){.split{grid-template-columns:1fr 1fr;min-height:720px}.split .ph-col{min-height:auto}.split .tx-col{padding:80px 8vw 80px 6vw}.split.rev .ph-col{order:2}}
+
+/* Факты в строку */
+.facts{display:flex;flex-wrap:wrap;gap:0;margin:34px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{flex:1 1 0;min-width:0;padding:16px 10px;text-align:center;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font:400 26px/1.05 var(--serif);color:var(--ink)}
+.facts span{display:block;font-size:12px;line-height:1.35;color:var(--mute);margin-top:6px;letter-spacing:.04em}
+
+/* Нумерованный редакционный список (I, II, III …) */
+.roman{list-style:none;counter-reset:r;display:grid;gap:0;border-top:1px solid var(--line)}
+.roman>li{counter-increment:r;display:grid;grid-template-columns:64px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line);position:relative}
+.roman>li:before{content:counter(r,upper-roman);font:italic 400 30px/1 var(--serif);color:var(--acc)}
+.roman b{display:block;font:400 21px/1.3 var(--serif);margin-bottom:6px}
+.roman span{color:var(--ink2);font-size:16px}
+.roman.cols{border-top:0}
+@media(min-width:960px){.roman.cols{grid-template-columns:repeat(var(--n,3),1fr);column-gap:36px}.roman.cols>li{grid-template-columns:1fr;border-top:1px solid var(--line);border-bottom:0;padding-top:28px}}
+
+/* Колонки с тонкой линейкой сверху */
+.cols3{display:grid;gap:34px}
+.cols3>div{border-top:1px solid var(--ink);padding-top:22px}
+.cols3 h3{margin-bottom:10px}
+.cols3 p{color:var(--ink2);font-size:16px}
+@media(min-width:960px){.cols3{grid-template-columns:repeat(var(--n,3),1fr);gap:44px}}
+
+/* Цитата */
+.quote{font:italic 400 clamp(24px,3vw,36px)/1.35 var(--serif);color:var(--ink)}
+.quote:before{content:"«"}.quote:after{content:"»"}
+.cite{display:block;margin-top:18px;font:500 12px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+
+/* Ведомость (как накладная) */
+.ledger{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+.ledger .row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.ledger .row:last-child{border-bottom:0}
+.ledger .row span{font-size:15px;color:var(--ink2);letter-spacing:.02em}
+.ledger .row b{font:400 clamp(22px,3vw,30px)/1 var(--serif);white-space:nowrap}
+.ledger .row.total{background:var(--acc-soft)}
+.ledger .row.total b{color:var(--acc)}
+.ledger-cap{display:flex;justify-content:space-between;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);padding:0 2px 12px}
+
+/* Заготовки под материалы (видимые, но аккуратные) */
+.ph{position:relative;background:var(--stone);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;font:500 11px/1.6 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.ph:before,.todo-tag{content:"Материал";position:absolute;left:10px;top:10px;background:#C7681E;color:#fff;font:600 9px/1 var(--sans);letter-spacing:.16em;padding:5px 7px;text-transform:uppercase}
+.todo{outline:1px dashed #C7681E;outline-offset:6px}
+.todo-note{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.04em;color:#B05A17;margin-top:12px}
+
+/* Квиз и форма — «карточка записи» */
+.card-rdv{background:var(--paper);border:1px solid var(--line);max-width:640px;margin:0 auto;padding:40px 28px;position:relative}
+.card-rdv:before{content:"";position:absolute;inset:7px;border:1px solid var(--stone);pointer-events:none}
+@media(max-width:520px){.card-rdv{padding:30px 18px}}
+.bar{display:flex;gap:6px;margin-bottom:28px}
+.bar i{flex:1;height:2px;background:var(--line);transition:background .3s}
+.bar i.on{background:var(--ink)}
+.stepno{font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.step{display:none}
+.step.on{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.step h3{margin-bottom:22px}
+.opts{display:grid;gap:10px}
+.opt{width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);padding:17px 18px;font:400 17px/1.35 var(--sans);color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:border-color .2s,background .2s}
+.opt:after{content:"→";color:var(--mute)}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.opt.sel:after{color:var(--ivory)}
+.back{background:none;border:0;color:var(--mute);font:400 14px var(--sans);margin-top:18px;cursor:pointer;letter-spacing:.04em}
+.back:hover{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0}
+.chip b{display:block;font:400 15px/1 var(--sans);padding:13px 16px;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:all .2s}
+.chip input:checked+b{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.chip input:focus-visible+b{outline:2px solid var(--acc);outline-offset:2px}
+.fld{display:block;margin-bottom:22px}
+.fld>span{display:block;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.fld input,.fld select{width:100%;font:400 18px var(--sans);padding:10px 0 12px;border:0;border-bottom:1px solid var(--ink2);background:transparent;color:var(--ink);border-radius:0;-webkit-appearance:none;appearance:none}
+.fld select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%232B2420'/%3E%3C/svg%3E") right 4px center no-repeat}
+.fld input:focus,.fld select:focus{outline:0;border-bottom:2px solid var(--acc)}
+.fld input::placeholder,.fld textarea::placeholder{color:#B3A99C}
+/* Открытый вопрос: подробность ответа — сигнал теплоты лида */
+.fld textarea{width:100%;font:400 16px/1.5 var(--sans);padding:12px 14px;border:1px solid var(--line);border-radius:0;background:var(--paper);color:var(--ink);resize:vertical;min-height:112px}
+.fld textarea:focus{outline:0;border-color:var(--acc)}
+.fld.req>span{text-transform:none;letter-spacing:0;font:500 16px/1.4 var(--sans);color:var(--ink)}
+.fld.req small{display:block;font-size:13px;color:var(--mute);margin-top:6px;line-height:1.45}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0}
+.seg b{display:block;text-align:center;padding:14px;border:1px solid var(--line);font:400 16px var(--sans);cursor:pointer;background:var(--paper)}
+.seg input:checked+b{border-color:var(--ink);background:var(--ink);color:var(--ivory)}
+.agree{display:flex;gap:10px;font-size:13px;line-height:1.5;color:var(--mute);margin:2px 0 12px;align-items:flex-start}
+.agree input{margin-top:3px;accent-color:var(--ink)}
+.err{color:#A3261E;font-size:14px;min-height:22px}
+.fallback{display:block;text-align:center;margin-top:12px;font:500 12px var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.micro{font-size:13px;color:var(--mute);margin-top:14px;text-align:center}
+#thanks{text-align:center}
+#thanks .kick{font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+#thanks h3{font-size:30px;margin-bottom:14px}
+#thanks p{color:var(--ink2);margin-bottom:26px}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font:400 20px/1.35 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font:300 26px/1 var(--sans);color:var(--acc)}
+.faq details[open] summary:after{content:"−"}
+.faq p{margin-top:12px;color:var(--ink2);font-size:16px}
+
+/* Полоса доказательства сразу после первого экрана */
+.proof{padding:34px 0;border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;gap:22px;align-items:center}
+.proof q{display:block;font:italic 400 clamp(21px,2.4vw,28px)/1.3 var(--serif);quotes:"«" "»"}
+.proof q+span{display:block;font-size:13px;color:var(--mute);margin-top:8px;letter-spacing:.04em}
+.proof .pn{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.proof .pn b{display:block;font:400 clamp(26px,3vw,34px)/1 var(--serif)}
+.proof .pn span{display:block;font-size:12px;line-height:1.4;color:var(--mute);margin-top:6px}
+@media(min-width:960px){.proof .wrap{grid-template-columns:1.1fr 1fr;gap:60px}}
+
+/* Повтор кнопки после блока */
+.again{text-align:center;margin-top:46px}
+
+/* Что вы получите + что будет после заявки */
+.leadwrap{display:grid;gap:40px;max-width:1080px;margin:0 auto}
+@media(min-width:960px){.leadwrap{grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}.leadwrap .card-rdv{margin:0;max-width:none}}
+.get h3{margin-bottom:16px}
+.get ul{list-style:none;display:grid;gap:14px;margin-bottom:34px}
+.get li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:16px;line-height:1.5;color:var(--ink2)}
+.get li:before{content:"";width:16px;height:1px;background:var(--acc);margin-top:12px}
+.get li b{color:var(--ink);font-weight:500}
+.get .bonus{background:var(--acc-soft);padding:16px 18px;margin:-12px 0 34px;font-size:15px;line-height:1.5}
+.get .bonus b{display:block;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.get ol{list-style:none;counter-reset:g;display:grid;gap:12px}
+.get ol li{counter-increment:g;grid-template-columns:28px 1fr}
+.get ol li:before{content:counter(g);width:auto;height:auto;background:none;margin:0;font:400 18px/1.3 var(--serif);color:var(--acc)}
+
+/* Реальные кейсы с видео-отзывами */
+.rc{display:grid;gap:22px}
+@media(min-width:960px){.rc{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}}
+.rc-pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:6px;margin-bottom:18px}
+.rc-pics img{width:100%;height:110px;object-fit:cover}
+/* Галерея реальных фото */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal figure{position:relative;overflow:hidden}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .6s}
+.gal figcaption{font-size:12.5px;line-height:1.4;color:var(--mute);margin-top:8px}
+.gal figure:first-child{grid-column:span 2}
+.gal figure:first-child img{aspect-ratio:16/10;object-position:50% 30%}
+@media(min-width:960px){.gal{grid-template-columns:repeat(4,1fr);gap:16px}.gal figure:first-child{grid-column:span 2;grid-row:span 2}.gal figure:first-child img{aspect-ratio:auto;height:calc(100% - 28px)}}
+.trust{display:flex;gap:10px;align-items:center;justify-content:center;font-size:12px;line-height:1.45;color:var(--mute);margin-top:16px;text-align:left}
+.trust:before{content:"";flex:0 0 22px;height:22px;border:1px solid var(--acc);border-radius:50%;background:radial-gradient(circle,var(--acc) 0 3px,transparent 4px)}
+.rc-card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#111;cursor:pointer;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt i{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:rgba(255,255,255,.92)}
+.yt i:after{content:"";position:absolute;left:25px;top:20px;border-left:17px solid var(--acc);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.yt em{position:absolute;left:12px;top:12px;background:var(--paper);color:var(--ink);font:500 10px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:7px 9px;font-style:normal}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.rc-body{padding:24px 22px 26px;display:flex;flex-direction:column;flex:1}
+.rc-q{font:italic 400 21px/1.35 var(--serif);margin-bottom:14px}
+.rc-who{font-size:14px;color:var(--mute);margin-bottom:18px;line-height:1.45}
+.rc-who b{display:block;color:var(--ink);font-weight:500;font-size:16px}
+.rc dl{display:grid;gap:4px;margin-bottom:20px}
+.rc dt{font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-top:12px}
+.rc dd{font-size:15px;line-height:1.5;color:var(--ink2)}
+.rc-n{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto}
+.rc-n b{display:block;font:500 22px/1.1 var(--serif);color:var(--ink)}
+.rc-n span{display:block;font-size:12px;line-height:1.35;color:var(--mute);margin-top:4px}
+
+/* Подвал */
+footer{background:var(--sand);text-align:center;padding:54px 22px 120px}
+footer .wm{font:400 17px/1 var(--serif);letter-spacing:.34em;padding-left:.34em}
+footer p{font-size:13px;color:var(--mute);margin-top:14px;line-height:1.7}
+footer a{color:var(--mute)}
+
+/* Закреплённая кнопка на мобильном */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,243,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;min-height:52px}
+@media(min-width:960px){.sticky{display:none}}
+
+/* ===== Мобильная версия — основная: 99,7% трафика из встроенного браузера Instagram / Facebook ===== */
+@media(max-width:700px){
+  .annonce{display:none}                         /* сезон уже есть в надзаголовке — экономим высоту первого экрана */
+  .over{font-size:13px;letter-spacing:.16em;margin-bottom:12px}
+  .lead{font-size:17px}
+  .small,.cta-note,.micro,.trust{font-size:13px}
+  .facts span,.proof .pn span,.rc-n span,.gal figcaption{font-size:13px}
+  .ledger-cap,.stepno,.fld>span,.rc dt{font-size:12px}
+  section{padding:52px 0}
+  .split .ph-col{min-height:44vh}
+  .split .tx-col{padding:40px 22px}
+  .head{margin-bottom:24px}
+  /* Кейсы и галерея — карусель со свайпом вместо длинного столбца */
+  .rc,.gal{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -22px;padding:0 22px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .rc::-webkit-scrollbar,.gal::-webkit-scrollbar{display:none}
+  .rc-card{flex:0 0 86%;scroll-snap-align:center}
+  .gal figure{flex:0 0 70%;scroll-snap-align:center}
+  .gal figure:first-child{grid-column:auto}
+  .gal figure:first-child img,.gal img{aspect-ratio:4/5;height:auto}
+  .swipe{display:block;font-size:13px;color:var(--mute);margin-top:6px}
+  /* Видео-отзывы: вертикальное превью — лицо крупнее, без чёрных полос */
+  .yt{aspect-ratio:4/5}
+  .yt img{object-fit:cover;object-position:50% 40%;transform:scale(1.35)}
+  /* Форма: сначала квиз, пояснения ниже */
+  .leadwrap .card-rdv{order:-1}
+}
+.swipe{display:none}
+/* Стрелки и точки под каруселью */
+.car-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.car-nav .pv,.car-nav .nx{flex:0 0 44px;height:44px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:400 24px/1 var(--sans);cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-bottom:3px}
+.car-nav .pv:disabled,.car-nav .nx:disabled{opacity:.35;cursor:default}
+.car-nav .dots{display:flex;gap:8px;justify-content:center;flex:1}
+.car-nav .dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
+.car-nav .dots button.on{background:var(--acc);width:22px;border-radius:4px}
+
+/* Появление при прокрутке */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Концепция E — обновлённый оригинал shopitaly.biz/premium: белый и тёплый серый, золотая кнопка, Montserrat */
+:root{--ivory:#FFFFFF;--paper:#FFFFFF;--sand:#F6F4F0;--stone:#ECE8E1;--line:#E7E2DA;--ink:#1E1E1E;--ink2:#444140;--mute:#7B7671;--acc:#B98A2E;--acc-soft:#FBF3E2;--gold:#E9B44C;
+  --serif:'Montserrat','Helvetica Neue',Arial,sans-serif;--sans:'Montserrat','Helvetica Neue',Arial,sans-serif}
+body{font-size:16px;line-height:1.6}
+h1,h2,h3{font-weight:700;letter-spacing:-.015em}
+h1{font-size:clamp(25px,6.6vw,40px);line-height:1.22}
+h2{font-size:clamp(23px,5.6vw,34px);line-height:1.22}
+h3{font-size:18px;font-weight:700}
+h1 em,h2 em{font-style:normal;color:var(--acc)}
+.over{color:var(--acc);letter-spacing:.16em;font-weight:700}
+.lead{font-size:16.5px}
+.btn{background:linear-gradient(180deg,#F2C462,#E2A63B);color:#1E1E1E;border:0;border-radius:12px;font:700 14px var(--sans);letter-spacing:.06em;box-shadow:0 10px 24px rgba(226,166,59,.35);min-height:58px}
+.btn:hover{background:linear-gradient(180deg,#EDBB52,#D99A2E)}
+.btn.ghost{background:#fff;border:1px solid var(--line);box-shadow:none}
+.card-rdv{border-radius:18px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.06)}
+.card-rdv:before{display:none}
+.opt,.chip b,.seg b{border-radius:12px}
+.opt.sel,.chip input:checked+b,.seg input:checked+b{background:var(--ink);border-color:var(--ink);color:#fff}
+.fld input,.fld select{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.fld select{background-position:right 14px center}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border:1px solid var(--acc);outline:2px solid var(--acc-soft)}
+.fld textarea{border-radius:12px}
+.rc-card{border-radius:18px;overflow:hidden}
+.rc-q{font-style:normal;font-weight:600;font-size:17px}
+.rc-n b{font-weight:700;color:var(--acc)}
+.faq summary{font:600 17px/1.4 var(--sans)}
+section{padding:56px 0}
+/* Шапка */
+.top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.top .wm{font:800 16px var(--sans);letter-spacing:.12em}
+.top a{display:flex;gap:8px;align-items:center;font:600 13px var(--sans);text-decoration:none;color:var(--ink)}
+.top a:before{content:"";width:22px;height:22px;border-radius:50%;background:#25D366 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3zm4.4 12.4c-.2.5-1 1-1.5 1-.4.1-.9.1-1.5-.1-2.6-1-4.3-3.6-4.4-3.8-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2z'/%3E%3C/svg%3E") center/14px no-repeat}
+/* Первый экран */
+.hero{background:linear-gradient(180deg,#FFFFFF 0%,#F6F4F0 100%);padding:0 0 34px;overflow:hidden}
+.hero .ph{display:none}
+.hero-img{position:relative;height:25vh;min-height:160px;margin:0 -22px;overflow:hidden}
+@media(max-width:700px){.hero h1{font-size:22px;line-height:1.28}.hero .lead{font-size:15px}.season{margin-top:-14px;font-size:12px}}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 18%}
+.hero-img:after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(180deg,rgba(255,255,255,0),#FFFFFF)}
+.season{display:inline-block;background:var(--acc-soft);color:var(--acc);font:800 13px var(--sans);letter-spacing:.14em;padding:8px 12px;border-radius:999px;margin:-8px 0 14px;position:relative}
+.hero h1{margin-bottom:14px}
+.hero h1 em{color:var(--acc)}
+.hero .lead{margin-bottom:6px}
+.since{display:flex;gap:10px;align-items:center;font-size:13.5px;color:var(--ink2);margin-top:16px}
+.since b{font:800 22px var(--sans);color:var(--acc)}
+@media(min-width:960px){.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}.hero-img{order:2;height:640px;margin:0}.hero-img:after{display:none}.hero{padding:40px 0}}
+/* Преимущества */
+.adv{display:grid;gap:12px}
+.adv div{display:grid;grid-template-columns:44px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 16px}
+.adv i{width:44px;height:44px;border-radius:12px;background:var(--acc-soft);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:20px}
+.adv b{display:block;font-size:15.5px;margin-bottom:2px}
+.adv span{font-size:14.5px;color:var(--ink2);line-height:1.5}
+@media(min-width:960px){.adv{grid-template-columns:repeat(4,1fr)}}
+/* Наталья */
+.nat{display:grid;gap:24px}
+.nat img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;border-radius:18px}
+.nat .lic{display:inline-block;font-size:12.5px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin:6px 0 16px}
+.nat p{margin-bottom:12px;color:var(--ink2)}
+.nat .hl{font-weight:700;color:var(--ink);border-left:3px solid var(--gold);padding-left:14px}
+@media(min-width:960px){.nat{grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}}
+/* Три карточки */
+.c3{display:grid;gap:12px;margin-top:20px}
+.c3 div{background:#fff;border-radius:16px;padding:20px 18px;border-top:3px solid var(--gold);box-shadow:0 8px 24px rgba(0,0,0,.04)}
+.c3 b{display:block;font-size:20px;margin-bottom:6px}
+.c3 span{font-size:14.5px;color:var(--ink2)}
+@media(min-width:960px){.c3{grid-template-columns:repeat(3,1fr)}}
+/* Вопросы-узнавание */
+.qs{display:grid;gap:10px;margin-top:18px}
+.qs p{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:600;font-size:15.5px;display:grid;grid-template-columns:26px 1fr;gap:8px}
+.qs p:before{content:"✓";color:var(--acc);font-weight:800}
+/* Бренды */
+.seg3{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.seg3 span{font:700 12.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;border-radius:999px;padding:8px 14px}
+.brands{columns:2;column-gap:16px;font:600 13px/1 var(--sans);letter-spacing:.06em;color:var(--ink2);max-height:390px;overflow:hidden;position:relative;transition:max-height .4s}
+.brands span{display:block;padding:9px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.brands.open{max-height:4000px}
+.brands:not(.open):after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(180deg,rgba(246,244,240,0),var(--sand))}
+.more{margin-top:14px;background:none;border:1px solid var(--ink);border-radius:12px;padding:12px 18px;font:600 14px var(--sans);cursor:pointer}
+@media(min-width:960px){.brands{columns:4}}
+/* Письмо Натальи */
+.letter{background:#fff;border-radius:18px;padding:26px 20px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.letter .sig{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.letter .sig img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 15%}
+.letter .sig b{display:block}
+.letter .sig span{font-size:13px;color:var(--mute)}
+.letter p{color:var(--ink2);margin-bottom:12px}
+.letter ul{list-style:none;display:grid;gap:8px;margin:6px 0 16px}
+.letter li{background:var(--sand);border-radius:12px;padding:12px 14px;font-size:15px}
+/* Списки и шаги */
+.ticks{list-style:none;display:grid;gap:10px;margin-top:16px}
+.ticks li{display:grid;grid-template-columns:26px 1fr;gap:8px;font-size:15.5px}
+.ticks li:before{content:"";width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E1E1E' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.steps7{list-style:none;counter-reset:s7;display:grid;gap:0;margin-top:18px;border-left:2px solid var(--line);padding-left:20px}
+.steps7 li{counter-increment:s7;position:relative;padding:0 0 18px;font-size:15.5px;color:var(--ink2)}
+.steps7 li:before{content:counter(s7);position:absolute;left:-35px;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font:700 13px/28px var(--sans);text-align:center}
+/* Калькулятор окупаемости */
+.calc2{background:#fff;border-radius:18px;padding:22px 18px;border:1px solid var(--line);margin-top:18px}
+.calc2 label{display:flex;justify-content:space-between;font-weight:600;font-size:14.5px;margin-bottom:10px}
+.calc2 output{font:800 22px var(--sans);color:var(--ink)}
+.calc2 input[type=range]{width:100%;accent-color:var(--acc)}
+.calc2 .res{margin-top:16px;background:var(--acc-soft);border-radius:14px;padding:16px;text-align:center}
+.calc2 .res span{display:block;font-size:13px;color:var(--ink2)}
+.calc2 .res b{display:block;font:800 26px var(--sans);color:var(--acc);margin-top:4px}
+/* Сервис под ключ */
+.svc{display:grid;gap:10px;margin-top:18px}
+.svc div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;font-size:15px;color:var(--ink2)}
+.svc b{color:var(--ink)}
+@media(min-width:960px){.svc{grid-template-columns:repeat(3,1fr)}}
+/* Цифры */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.stats div{background:#fff;border-radius:16px;padding:18px 14px;border:1px solid var(--line)}
+.stats b{display:block;font:800 30px var(--sans);color:var(--acc)}
+.stats span{font-size:13.5px;color:var(--ink2);line-height:1.4}
+@media(min-width:960px){.stats{grid-template-columns:repeat(4,1fr)}}
+.cta-band{background:var(--ink);color:#fff;border-radius:18px;padding:28px 20px;text-align:center}
+.cta-band h2{color:#fff}
+.cta-band p{color:#d8d4cf;margin-bottom:18px}
+footer{background:var(--sand)}
+footer .wm{font:800 16px var(--sans);letter-spacing:.12em}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="wm">FORTUNA-S</div>
+  <a href="https://wa.me/393287076811" target="_blank" rel="noopener" data-cta="header_whatsapp">+39 328 707 6811</a>
+</div></div>
+
+<!-- ===== 1. Первый экран ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-img"><img src="data:image/webp;base64,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" alt="Наталья Мазур, FORTUNA-S" fetchpriority="high"></div>
+    <div>
+      <span class="season">ВЕСНА — ЛЕТО 2027</span>
+      <h1>Предзаказ коллекций одежды, обуви и сумок от <em>320+ итальянских премиальных брендов</em> под формат вашего магазина без поездки в Италию</h1>
+      <p class="lead">Поможем заказать коммерческий ассортимент и распределить бюджет между брендами так, чтобы вы заработали на каждом.</p>
+      <div style="margin-top:18px"><a href="#lead" class="btn wide" data-cta="hero">Получить предложения лето 2027</a></div>
+      <div class="since"><b>2004</b><span>С этого года сопровождаем премиум-магазины в 13 странах от закупки до результата</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 2. Преимущества ===== -->
+<section style="padding-top:28px">
+  <div class="wrap">
+    <p class="lead" style="margin-bottom:18px">Работаем с собственниками мультибрендовых бутиков, для которых важно не просто «привезти бренды из Италии», а управлять прибылью и рисками сезона.</p>
+    <div class="adv">
+      <div><i>✦</i><p><b>Доступ к 320+ премиальным брендам из Италии</b><span>которые не продаются у ваших конкурентов</span></p></div>
+      <div><i>◷</i><p><b>Будьте первыми</b><span>получайте самые продаваемые модели за 7 месяцев до выхода в ритейл</span></p></div>
+      <div><i>▣</i><p><b>Документы, логистика, контроль</b><span>без вашего участия</span></p></div>
+      <div><i>↗</i><p><b>Наценка до 300%</b><span>продавайте без скидок и остатков благодаря проверенной системе подбора коллекции под ваш формат</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. Наталья ===== -->
+<section class="bg-sand">
+  <div class="wrap nat">
+    <img loading="lazy" decoding="async" src="/img/r_natalia-arki.webp" alt="Наталья Мазур">
+    <div>
+      <h2>Наталья Мазур</h2>
+      <p style="margin-bottom:4px">Собственник агентства стратегических закупок и роста премиум-ритейла Fortuna-S</p>
+      <span class="lic">№ лицензии IT 03920400409</span>
+      <p>С 2004 года мы помогаем выстраивать системы управления закупками и продажами, которые зарабатывают с первой поставки.</p>
+      <p class="hl">В премиум fashion 90% прибыли зависит не от брендов, а от того, насколько точно вы попадаете в спрос вашего покупателя.</p>
+      <p>Каждое неверное решение — это замороженные деньги, распродажи и уценки.</p>
+      <p>Мы знаем, как формировать ассортимент, который продаётся с плановым остатком и уровнем прибыли.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. Планирование сезона ===== -->
+<section>
+  <div class="wrap">
+    <span class="over">Если вы не управляете своим ассортиментом — вы уже теряете прибыль</span>
+    <h2>Зарабатывайте больше за счёт <em>планирования сезона</em> и точного подбора коллекций</h2>
+    <div class="c3">
+      <div><b>До 30% выше продажи</b><span>За счёт закупки коллекций, которые не уходят со скидками — в отличие от конкурентов, которые «сливают» остатки</span></div>
+      <div><b>Только сезонные тренды</b><span>Закупка от 320+ итальянских фабрик — формируем коллекцию под ваш формат магазина с учётом трендов, бюджета и целевой аудитории</span></div>
+      <div><b>Коммерческий ассортимент</b><span>который продаётся с плановыми остатками. Грамотная ассортиментная матрица повышает оборачиваемость и скорость продаж</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. Квиз ===== -->
+<section id="lead" class="bg-sand">
+  <div class="wrap">
+    <div class="head">
+      <span class="over">4 вопроса</span>
+      <h2>Ответьте на 4 вопроса, и мы точнее будем знать, <em>какой формат закупки вам подходит</em></h2>
+      <p class="lead">Предзаказ SS27, готовый склад или подготовка к открытию магазина. После этого отправим не общий каталог, а предложение под вашу ситуацию.</p>
+    </div>
+    <div class="leadwrap">
+      <div class="get">
+        <div class="bonus"><b>Дополнительно отправим</b>Инструкцию «Предзаказы: как организовать продажу ещё не купленного товара»</div>
+      </div>
+      <div class="card-rdv">
+        <div class="bar"></div>
+        <div class="step" data-q="format">
+          <p class="stepno"></p>
+          <h3>Какой формат закупки вам интересен?</h3>
+          <div class="opts">
+            <button class="opt">Предзаказ весна-лето 2027</button>
+            <button class="opt">Готовый склад</button>
+            <button class="opt">Подготовка к открытию магазина</button>
+            <button class="opt">Пока не знаю — нужна консультация</button>
+          </div>
+        </div>
+        <div class="step" data-q="shop">
+          <p class="stepno"></p>
+          <h3>Какой у вас магазин?</h3>
+          <div class="opts">
+            <button class="opt">Мультибрендовый бутик</button>
+            <button class="opt">Сеть бутиков</button>
+            <button class="opt">Монобрендовый магазин</button>
+            <button class="opt">Магазина пока нет</button>
+          </div>
+          <button class="back">← Назад</button>
+        </div>
+        <div class="step" data-q="segment">
+          <p class="stepno"></p>
+          <h3>Какой сегмент вам нужен?</h3>
+          <div class="chips" style="margin-bottom:22px">
+            <label class="chip"><input type="checkbox" value="Женский" checked><b>Женский</b></label>
+            <label class="chip"><input type="checkbox" value="Мужской"><b>Мужской</b></label>
+            <label class="chip"><input type="checkbox" value="Детский"><b>Детский</b></label>
+            <label class="chip"><input type="checkbox" value="Обувь"><b>Обувь</b></label>
+            <label class="chip"><input type="checkbox" value="Сумки и аксессуары"><b>Сумки и аксессуары</b></label>
+          </div>
+          <button class="btn wide next">Дальше</button>
+          <button class="back">← Назад</button>
+        </div>
+        <div class="step" data-q="budget">
+          <p class="stepno"></p>
+          <h3>Какой бюджет закупки на сезон?</h3>
+          <div class="opts">
+            <button class="opt">До 20 000 €</button>
+            <button class="opt">20 000 – 50 000 €</button>
+            <button class="opt">50 000 – 100 000 €</button>
+            <button class="opt">Более 100 000 €</button>
+          </div>
+          <button class="back">← Назад</button>
+        </div>
+        <div class="step" data-q="contact">
+          <p class="stepno"></p>
+          <h3>Как с вами связаться?</h3>
+          <form id="leadForm" novalidate>
+  <label class="fld req"><span>Опишите ваш запрос — что хотите обсудить по предзаказу весна-лето 2027</span>
+    <textarea name="request" rows="4" maxlength="2000" placeholder="Например: мультибрендовый бутик, сейчас продаём Liu Jo и Twinset. Хотим добавить премиальные бренды и понять, как распределить бюджет, чтобы не остаться с остатками."></textarea>
+    <small>Чем подробнее опишете, тем точнее предложение под ваш магазин — не общий каталог.</small></label>
+  
+  <label class="fld"><span>Как к вам обращаться</span>
+    <input name="fullname" autocomplete="name" placeholder="Ваше имя"></label>
+  <div class="fld"><span>Куда написать</span>
+    <div class="seg">
+      <label><input type="radio" name="messenger" value="WhatsApp" checked><b>WhatsApp</b></label>
+      <label><input type="radio" name="messenger" value="Telegram"><b>Telegram</b></label>
+    </div>
+  </div>
+  <label class="fld"><span>Страна</span><select id="country" name="country"></select></label>
+  <label class="fld"><span>Номер телефона</span>
+    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"></label>
+  <label class="agree"><input type="checkbox" name="agree" checked>
+    <span>Согласен(-на) на обработку персональных данных по <a href="https://shopitaly.biz/privacy/" target="_blank" rel="noopener">политике конфиденциальности</a></span></label>
+  <p class="err" role="alert"></p>
+  <button type="submit" class="btn wide">Получить предложения</button>
+  <a class="fallback" hidden target="_blank" rel="noopener">Написать в WhatsApp</a>
+  <p class="micro">Без рассылок. Отвечаем пн–сб, 9:00–20:00 по времени Италии.</p>
+  <p class="trust">FORTUNA-S работает в Италии с 2004 года · лицензия в ТПП Италии № IT03920400409 · Римини</p>
+</form>
+<div id="thanks" hidden>
+  <p class="kick">Заявка получена</p>
+  <h3>Спасибо! Готовим предложение под ваш магазин</h3>
+  <p>В течение рабочего дня напишем в выбранный мессенджер и пришлём предложение и инструкцию по предзаказам. Хотите быстрее — напишите сами, ваши ответы уже в сообщении.</p>
+  <a class="btn wide wa" target="_blank" rel="noopener" data-cta="thanks_whatsapp">Написать сейчас в WhatsApp</a>
+  <a class="btn ghost wide channel" target="_blank" rel="noopener" data-cta="thanks_channel">Канал «Карта открытия»</a>
+</div>
+
+          <button class="back">← Назад</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. Наш подход работает, если ===== -->
+<section>
+  <div class="wrap">
+    <h2>Наш подход работает, если вы <em>планируете зарабатывать на моде</em></h2>
+    <div class="qs">
+      <p>Устали продавать в ноль? Хотите наконец-то видеть прибыль на счету</p>
+      <p>Хотите продавать дороже — без страха, что не купят</p>
+      <p>Мечтаете, чтобы клиенты покупали не один раз в год, а по нескольку раз каждый сезон?</p>
+      <p>Хотите продавать без уценок, распродаж и потерь — всё по полной цене</p>
+    </div>
+    <div class="cta-band" style="margin-top:26px">
+      <h2 style="font-size:22px">Запросите предложения по оптовым ценам от итальянских премиум-брендов под формат вашего магазина</h2>
+      <p>Сформируйте коллекции, которые на 100% будут актуальны в сезоне весна-лето 2027</p>
+      <a href="#lead" class="btn wide" data-cta="band_1">Получить условия предзаказа</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. Бренды ===== -->
+<section class="bg-sand">
+  <div class="wrap">
+    <h2>Более 320 итальянских производителей <em>премиальной одежды, обуви и аксессуаров</em> готовы обсудить сотрудничество с вами</h2>
+    <p class="lead">Вы получите оригинальную продукцию «Made in Italy» от официальных производителей — наших партнёров.</p>
+    <div class="seg3"><span>Женский сегмент</span><span>Мужской сегмент</span><span>Детский сегмент</span></div>
+    <div class="brands" id="brands">
+      <span>1017 ALYX 9SM</span><span>3.1 Phillip Lim</span><span>A.P.C.</span><span>Adidas Originals</span><span>Aeronautica Militare</span><span>Agnona</span><span>Alessandra Rich</span><span>Alexander McQueen</span><span>Alexandre Vauthier</span><span>Ambush</span><span>AMI</span><span>Amiri</span><span>Ann Demeulemeester</span><span>Anya Hindmarch</span><span>Aquazzura</span><span>Arc'teryx</span><span>Area</span><span>Arizona Love</span><span>Arma</span><span>Armani Exchange</span><span>Autry</span><span>Balenciaga</span><span>Bally</span><span>Balmain</span><span>Bao Bao Issey Miyake</span><span>Barbour</span><span>Berluti</span><span>Birkenstock</span><span>Brunello Cucinelli</span><span>Burberry</span><span>By Far</span><span>Casadei</span><span>Chiara Ferragni</span><span>Chloé</span><span>Christian Louboutin</span><span>Church's</span><span>Coccinelle</span><span>Comme des Garçons</span><span>Common Projects</span><span>Converse</span><span>Coperni</span><span>Danton</span><span>Diemme</span><span>Diesel</span><span>Dior Homme</span><span>Duvetica</span><span>Elisabetta Franchi</span><span>Emporio Armani</span><span>Entire Studios</span><span>Ermanno Scervino</span><span>Etro</span><span>Fabiana Filippi</span><span>Fendi</span><span>Furla</span><span>Ganni</span><span>GCDS</span><span>Gia Borghini</span><span>Giambattista Valli</span><span>Gianvito Rossi</span><span>Giorgio Armani</span><span>Giuseppe Zanotti</span><span>Givenchy</span><span>Golden Goose</span><span>GR10K</span><span>Helmut Lang</span><span>Herno</span><span>Heron Preston</span><span>Hervé Chapelier</span><span>Hogan</span><span>Hoka</span><span>Ienki Ienki</span><span>Ih Nom Uh Nit</span><span>Il Bisonte</span><span>Isabel Marant</span><span>Isabel Marant Étoile</span><span>J.W. Anderson</span><span>Jacquemus</span><span>Jil Sander</span><span>Jimmy Choo</span><span>Junya Watanabe</span><span>Karl Lagerfeld</span><span>Kenzo</span><span>Khrisjoy</span><span>Lacoste</span><span>Lanvin</span><span>Lemaire</span><span>Liu Jo</span><span>Loewe</span><span>Longchamp</span>
+    </div>
+    <button class="more" id="moreBrands">Показать все бренды</button>
+  </div>
+</section>
+
+<!-- ===== 8. Обращение Натальи ===== -->
+<section>
+  <div class="wrap">
+    <h2 style="margin-bottom:18px">Прибыльный магазин = <em>востребованный ассортимент</em></h2>
+    <div class="letter">
+      <div class="sig"><img loading="lazy" decoding="async" src="/img/r_natalia-arki.webp" alt="Наталья Мазур"><div><b>Наталья Мазур</b><span>сооснователь агентства оптовых закупок в Италии «Fortuna-S»</span></div></div>
+      <p>— Здравствуйте, я — Наталья Мазур, сооснователь торгово-консалтингового агентства оптовых закупок в Италии «Fortuna-S».</p>
+      <p>Коммерческий ассортимент — это визитная карточка вашего магазина и залог успеха в сегменте fashion. Хорошо продаваться будет только тот ассортимент, который нужен покупателю. Только так он будет быстро раскупаться и приносить прибыль.</p>
+      <p><b>Если на данный момент вы чувствуете, что:</b></p>
+      <ul>
+        <li>Все цифры, планы и идеи содержатся только у вас в голове.</li>
+        <li>Выстроены они на основе личного видения или опыта прошлых закупок.</li>
+        <li>Вам не хватает структуры и складывается впечатление, что часть коллекции взяли потому, что нравится.</li>
+      </ul>
+      <p>Давайте обсудим вашу ситуацию прямо сейчас! Оптовые закупки коммерческого ассортимента — это то, чем мы занимаемся последние 20 лет.</p>
+      <a href="#lead" class="btn wide" data-cta="letter">Получить предложения лето 2027</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. Подход и этапы ===== -->
+<section class="bg-sand">
+  <div class="wrap">
+    <h2>Наш подход проверен <em>20-летним опытом</em></h2>
+    <p class="lead">Он помогает нашим клиентам становиться успешнее, обходить конкурентов и развиваться даже в условиях высокой конкуренции и чувствительности клиентов к стоимости.</p>
+    <ul class="ticks">
+      <li>Выстроим структуру закупки — от выявления трендов до финансовой составляющей</li>
+      <li>Расскажем, как минимизировать остатки и увеличить прибыль</li>
+      <li>Научим планировать коммерчески успешный и эффективный ассортимент для магазина</li>
+      <li>Просчитаем процесс и подкрепим его фактами: почему нужно покупать ту или иную модель</li>
+      <li>Вы сможете масштабировать ваш бизнес</li>
+      <li>Ваш розничный магазин окупится в короткие сроки и начнёт давать прибыль</li>
+    </ul>
+    <h2 style="margin-top:40px">Мы точно знаем, как на каждом этапе закупки <em>можно заработать больше денег</em></h2>
+    <ol class="steps7">
+      <li>Прогнозируем продажи и выручку в конкретном магазине на сезон весна-лето 2027, составляем план продаж</li>
+      <li>Считаем бюджет на закупку, чтобы иметь оптимальный товарный запас на сезон</li>
+      <li>Составляем ассортиментную матрицу. Планируем баланс товарных категорий — количество артикулов, цвета и принты, размерная сетка</li>
+      <li>Находим подходящего поставщика, на товар которого сможем поставить нужную наценку и уложиться в бюджет</li>
+      <li>Формируем заказ и вносим предоплату 30%, понимаем себестоимость и формируем наценку</li>
+      <li>Налаживаем логистику: подбираем выгодные тарифы и формируем календарь поставок</li>
+      <li>Принимаем товар. Проверяем на брак и соответствие заказу. Решаем любой вопрос с фабрикой по возврату и обмену</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 10. Окупаемость ===== -->
+<section>
+  <div class="wrap">
+    <h2>Ваши вложения в коммерческий ассортимент <em>окупятся в 2–3 раза</em> за счёт грамотной структуры закупки</h2>
+    <p class="lead">Сбалансированный ассортимент будет продаваться без скидок и работать на вас, превращая покупателей в постоянных клиентов, которые возвращаются в ваш магазин снова и снова.</p>
+    <div class="calc2">
+      <label for="sum">Сумма закупки <output id="sumOut">5 000 €</output></label>
+      <input type="range" id="sum" min="5000" max="200000" step="5000" value="5000">
+      <div class="res"><span>Доход с реализации при окупаемости в 2–3 раза</span><b id="inc">10 000 – 15 000 €</b></div>
+      <p class="micro">Ориентир по данным агентства. Точный расчёт бюджета и товарного запаса — бесплатно, по заявке.</p>
+      <a href="#lead" class="btn wide" data-cta="calc" style="margin-top:14px">Рассчитать бюджет и товарный запас</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. Под ключ ===== -->
+<section class="bg-sand">
+  <div class="wrap">
+    <h2>Организуем предзаказ премиальных коллекций весна-лето 2027 <em>под ключ</em></h2>
+    <p class="lead">С полным сопровождением — как дистанционно, так и по приезде в Италию.</p>
+    <div class="svc">
+      <div><b>Всё под контролем:</b> фиксируем каждый шаг в дорожной карте — от заказа до получения товара</div>
+      <div><b>Таможенные документы берём на себя:</b> опись товара, чипирование, сертификация</div>
+      <div><b>Расчёты с поставщиками:</b> подберём удобный вариант с учётом вашей ситуации</div>
+      <div><b>Рекламации:</b> возврат и обмен в случае брака, недопоставки или пересорта</div>
+      <div><b>Логистика по Италии:</b> экономия до 20% за счёт точного расчёта затрат и тарифов</div>
+      <div><b>Персональный менеджер</b> контролирует и информирует вас о статусе доставки груза</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 12. Цифры и кейсы ===== -->
+<section>
+  <div class="wrap">
+    <h2>Самый ценный показатель нашей работы — <em>рост и развитие наших клиентов</em></h2>
+    <div class="stats">
+      <div><b>37+</b><span>городов в 13 странах делают закупки, используя наш 20-летний опыт</span></div>
+      <div><b>168+</b><span>магазинам помогли запуститься и пройти первые сезоны с минимальными рисками</span></div>
+      <div><b>6+</b><span>лет — средний срок сотрудничества с клиентом</span></div>
+      <div><b>316+</b><span>клиентов из 13 стран развили свой бизнес с нами</span></div>
+    </div>
+    <h3 style="margin:36px 0 16px">Опыт наших клиентов</h3>
+    <div class="rc"><article class="rc-card rv"><button class="yt" data-id="EKZo3HNkXyI" aria-label="Смотреть видео-отзыв: Юлия Кошелева"><img src="https://i.ytimg.com/vi/EKZo3HNkXyI/hqdefault.jpg" alt="Видео-отзыв: Юлия Кошелева" loading="lazy"><i></i><em>Видео-отзыв</em></button><div class="rc-body"><p class="rc-q">«Это всегда чёткость в работе»</p><p class="rc-who"><b>Юлия Кошелева</b>Сеть бутиков женской одежды Dolce Vita · Казахстан и Кипр</p><dl><dt>Задача</dt><dd>Открывать магазины женской одежды и обуви в разных странах — сегменты от среднего до премиум.</dd><dt>Решение</dt><dd>Подбор у сотен итальянских фабрик с учётом ассортимента, складских остатков, стоимости и сроков изготовления.</dd><dt>Результат</dt><dd>4 бутика за 14 лет: Алматы, Астана, Петропавловск и Avenue Makariou на Кипре.</dd></dl><div class="rc-n"><div><b>4</b><span>бутика</span></div><div><b>до 29%</b><span>экономии бюджета</span></div><div><b>14 лет</b><span>вместе</span></div></div></div></article><article class="rc-card rv"><button class="yt" data-id="jSqcwZAxEl8" aria-label="Смотреть видео-отзыв: Янина Садлий"><img src="https://i.ytimg.com/vi/jSqcwZAxEl8/hqdefault.jpg" alt="Видео-отзыв: Янина Садлий" loading="lazy"><i></i><em>Видео-отзыв</em></button><div class="rc-body"><p class="rc-q">«Все вопросы с договорами, фабриками, выставками помогали решать»</p><p class="rc-who"><b>Янина Садлий</b>Сеть бутиков Prior Group · Украина</p><dl><dt>Задача</dt><dd>Мультибрендовый бутик известных итальянских брендов, которых нет у конкурентов, — максимум за месяц.</dd><dt>Решение</dt><dd>Программу согласовали до приезда. За 4 рабочих дня — 4 оптовые базы, ассортимент закуплен полностью, доставка до двери за неделю.</dd><dt>Результат</dt><dd>В ноябре 2016 открыт Boutique Prior, за 3 года — второй бутик, уже премиум-сегмента. В 2018 — своя марка Number 8.</dd></dl><div class="rc-n"><div><b>4 дня</b><span>на отбор</span></div><div><b>1 неделя</b><span>доставка</span></div><div><b>−22%</b><span>к бюджету</span></div></div></div></article><article class="rc-card rv"><button class="yt" data-id="QS8LM72UVfQ" aria-label="Смотреть видео-отзыв: Ольга Чеботарева"><img src="https://i.ytimg.com/vi/QS8LM72UVfQ/hqdefault.jpg" alt="Видео-отзыв: Ольга Чеботарева" loading="lazy"><i></i><em>Видео-отзыв</em></button><div class="rc-body"><p class="rc-q">«У меня не было никаких тревог, даже на этапе открытия нового бизнеса»</p><p class="rc-who"><b>Ольга Чеботарева</b>Бутик детской одежды Tesorino · Благовещенск</p><dl><dt>Задача</dt><dd>От идеи до магазина детской одежды и обуви — обувь, которая подходит для Дальнего Востока.</dd><dt>Решение</dt><dd>Выставка Pitti Bimbo во Флоренции, заранее назначены встречи с 7 фабриками, весь ассортимент заказан на сезон вперёд.</dd><dt>Результат</dt><dd>Груз единой доставкой — в Благовещенске перед зимним сезоном. Магазин занял свою нишу в городе и увеличивает закупки.</dd></dl><div class="rc-n"><div><b>7</b><span>фабрик</span></div><div><b>−22%</b><span>к бюджету</span></div><div><b>100%</b><span>ассортимента заранее</span></div></div></div></article></div><span class="swipe">← листайте кейсы →</span>
+  </div>
+</section>
+
+<!-- ===== 13. Финал ===== -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 style="font-size:22px">Для роста и развития fashion-бизнеса нужна твёрдая система закупок и продаж</h2>
+      <p>Обсудим предзаказ весна-лето 2027 под формат вашего магазина</p>
+      <a href="#lead" class="btn wide" data-cta="final">Обсудить предзаказ SS 2027</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wm">FORTUNA-S</div>
+  <p>Оптовые поставки товаров из Италии с 2004 года<br>Пн–сб, 9:00–20:00 · +39 (328) 707 6811<br>Via M. Amari, 28 · Rimini 47923 · Италия · лицензия P.I. 03920400409<br><a href="https://shopitaly.biz/privacy/" target="_blank" rel="noopener">Политика конфиденциальности</a></p>
+</footer>
+
+<div class="sticky" data-always><a href="#lead" class="btn" data-cta="sticky">Получить предложения лето 2027</a></div>
+
+<script>
+window.LP = {
+  LANDING: 'E-premium-redesign',
+  PIXEL_ID: '697168424303530',          // Pixel с shopitaly.biz
+  WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbzzgiMkjYTltKWRDMD7HB92alm8CuRst7vkDzZ0glmq8ZhK-WLRFz9YQhZg5GgpxvDJ/exec',                      // ← вставить адрес вебхука CRM / Make / Google Sheets
+  WHATSAPP: '393287076811',
+  CHANNEL_URL: '',
+  SUBMIT_TEXT: 'Получить предложения',
+  waText: function (p) {
+    var a = p.answers;
+    return 'Здравствуйте! Хочу предложения на весну-лето 2027.\nФормат: ' + (a.format || '—') + '\nМагазин: ' + (a.shop || '—') +
+      '\nСегмент: ' + ((a.segment || []).join(', ') || '—') + '\nБюджет: ' + (a.budget || '—') + '\nСтрана: ' + p.country;
+  }
+};
+</script>
+<script>/* ===== Общая логика: Pixel, UTM, квиз, форма, вебхук, sticky-кнопка, появление блоков ===== */
+(function () {
+  var C = window.LP;
+  C.answers = C.answers || {};
+
+  // --- Meta Pixel ---
+  if (C.PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+  window.track = function (name, data) {
+    try { if (window.fbq) fbq('trackCustom', name, Object.assign({ landing: C.LANDING }, data || {})); } catch (e) {}
+    try { (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name, landing: C.LANDING }, data || {})); } catch (e) {}
+  };
+
+  // --- UTM и fbclid: заявка знает, с какого объявления пришла ---
+  var params = new URLSearchParams(location.search), utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function (k) {
+    if (params.get(k)) utm[k] = params.get(k);
+  });
+
+  // --- Ссылки-якоря (#lead, #calc): всегда прокручиваем внутри этой страницы.
+  // Без этого во встроенном виде (iframe, превью) ссылка уводит на адрес родительской страницы ---
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if (!a || a.hasAttribute('data-pick')) return;
+    var id = a.getAttribute('href').slice(1), el = id && document.getElementById(id);
+    if (!el) return;
+    ev.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // --- Клики по кнопкам ---
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.addEventListener('click', function () { track('cta_click', { place: el.getAttribute('data-cta') }); });
+  });
+
+  // --- Видео-отзывы: YouTube грузится только по нажатию, чтобы страница оставалась лёгкой ---
+  document.querySelectorAll('.yt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+      b.innerHTML = ''; b.appendChild(f);
+      track('video_review', { id: b.dataset.id });
+    }, { once: true });
+  });
+
+  // --- Карусели (ниши, кейсы, галерея): стрелки и точки — листаются и мышью, и пальцем ---
+  document.querySelectorAll('.niches, .rc, .gal, .reel').forEach(function (tr) {
+    var items = [].slice.call(tr.children);
+    if (items.length < 2 || tr.scrollWidth <= tr.clientWidth + 10) return;     // на широком экране это сетка — стрелки не нужны
+    var nav = document.createElement('div'); nav.className = 'car-nav';
+    nav.innerHTML = '<button type="button" class="pv" aria-label="Назад">‹</button><span class="dots"></span><button type="button" class="nx" aria-label="Дальше">›</button>';
+    var dots = nav.querySelector('.dots');
+    items.forEach(function (_, i) {
+      var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Карточка ' + (i + 1));
+      d.addEventListener('click', function () { go(i); }); dots.appendChild(d);
+    });
+    tr.parentNode.insertBefore(nav, tr.nextSibling);
+    var cur = 0;
+    // положение карточки внутри ленты — по реальным координатам на экране, не зависит от вложенности блоков
+    var posOf = function (it) { return tr.scrollLeft + it.getBoundingClientRect().left - tr.getBoundingClientRect().left; };
+    var go = function (i) {
+      cur = Math.max(0, Math.min(i, items.length - 1));
+      var it = items[cur];
+      // карточки «прилипают» к краю или к центру (scroll-snap) — прокручиваем так же, иначе браузер вернёт ленту назад
+      var start = /start/.test(getComputedStyle(it).scrollSnapAlign);
+      tr.scrollTo({ left: Math.max(0, start ? posOf(it) : posOf(it) - (tr.clientWidth - it.offsetWidth) / 2), behavior: 'smooth' });
+      mark(); track('carousel', { step: cur + 1 });
+    };
+    var mark = function () {
+      [].forEach.call(dots.children, function (d, k) { d.classList.toggle('on', k === cur); });
+      nav.querySelector('.pv').disabled = cur === 0;
+      nav.querySelector('.nx').disabled = cur === items.length - 1;
+    };
+    nav.querySelector('.pv').addEventListener('click', function () { go(cur - 1); });
+    nav.querySelector('.nx').addEventListener('click', function () { go(cur + 1); });
+    var t;
+    tr.addEventListener('scroll', function () {                                   // свайп пальцем — точки догоняют
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var mid = tr.scrollLeft + tr.clientWidth / 2, best = 0, dist = 1e9;
+        items.forEach(function (it, k) { var c = posOf(it) + it.offsetWidth / 2, dd = Math.abs(c - mid); if (dd < dist) { dist = dd; best = k; } });
+        cur = best; mark();
+      }, 120);
+    }, { passive: true });
+    var hint = nav.nextElementSibling; if (hint && hint.classList.contains('swipe')) hint.hidden = true;
+    mark();
+  });
+
+  // --- Плавное появление блоков ---
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else rv.forEach(function (el) { el.classList.add('in'); });
+
+  // --- Закреплённая кнопка: после первого экрана, прячется у формы ---
+  var sticky = document.querySelector('.sticky'), hero = document.querySelector('[data-sticky-after]') || document.querySelector('.hero'), formBox = document.getElementById('lead');
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    var always = sticky.hasAttribute('data-always');   // кнопка видна с первого экрана (когда основная кнопка ниже сгиба)
+    var heroVisible = !always, formVisible = false;
+    var upd = function () { sticky.classList.toggle('on', !heroVisible && !formVisible); };
+    if (!always) new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(hero);
+    upd();
+    if (formBox) new IntersectionObserver(function (e) { formVisible = e[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(formBox);
+  }
+
+  // --- Квиз: шаги .step[data-q], .opt — один ответ, .next — несколько (чекбоксы) ---
+  var steps = [].slice.call(document.querySelectorAll('.step')), cur = 0;
+  var txt = function (el) { return el.textContent.replace(/ /g, ' ').trim(); };  // неразрывные пробелы типографа → обычные
+  if (steps.length) {
+    var bar = document.querySelector('.bar');
+    if (bar) steps.forEach(function () { bar.appendChild(document.createElement('i')); });
+    var go = function (i) {
+      steps[cur].classList.remove('on'); cur = Math.max(0, Math.min(i, steps.length - 1)); steps[cur].classList.add('on');
+      if (bar) [].forEach.call(bar.children, function (b, k) { b.classList.toggle('on', k <= cur); });
+      var no = steps[cur].querySelector('.stepno');
+      if (no) no.textContent = cur === steps.length - 1 ? 'Последний шаг' : 'Вопрос ' + (cur + 1) + ' из ' + (steps.length - 1);
+      track('quiz_step', { step: cur + 1 });
+    };
+    C.goStep = go;
+    steps.forEach(function (s, i) {
+      s.querySelectorAll('.opt').forEach(function (o) {
+        o.addEventListener('click', function () {
+          s.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+          o.classList.add('sel'); C.answers[s.dataset.q] = txt(o);
+          if (i === 0) track('quiz_start');
+          setTimeout(function () { go(i + 1); }, 220);
+        });
+      });
+      var nx = s.querySelector('.next');
+      if (nx) nx.addEventListener('click', function () {
+        var v = [].map.call(s.querySelectorAll('input:checked'), function (x) { return x.value; });
+        if (!v.length) return;
+        C.answers[s.dataset.q] = v; if (i === 0) track('quiz_start'); go(i + 1);
+      });
+      var b = s.querySelector('.back'); if (b) b.addEventListener('click', function () { go(i - 1); });
+    });
+    // Внешние входы в квиз: data-pick="вопрос|ответ" — заполняет шаг и открывает следующий
+    document.querySelectorAll('[data-pick]').forEach(function (el) {
+      el.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        var p = el.getAttribute('data-pick').split('|'), idx = steps.findIndex(function (s) { return s.dataset.q === p[0]; });
+        C.answers[p[0]] = p[1];
+        steps[idx].querySelectorAll('.opt').forEach(function (o) { o.classList.toggle('sel', txt(o) === p[1]); });
+        track('quiz_start', { from: 'pick' });
+        go(idx + 1);
+        document.getElementById('lead').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    go(0);
+  }
+
+  // --- Страны: код подставляется в телефон ---
+  var COUNTRIES = [
+    ['Казахстан','+7'],['Украина','+380'],['Узбекистан','+998'],['Кыргызстан','+996'],['Азербайджан','+994'],
+    ['Грузия','+995'],['Армения','+374'],['Молдова','+373'],['Беларусь','+375'],['Россия','+7'],
+    ['Латвия','+371'],['Литва','+370'],['Эстония','+372'],['Польша','+48'],['Германия','+49'],
+    ['Италия','+39'],['Израиль','+972'],['ОАЭ','+971'],['Другая страна','+']
+  ];
+  var sel = document.getElementById('country'), phone = document.getElementById('phone');
+  if (sel) {
+    COUNTRIES.forEach(function (c, i) {
+      var o = document.createElement('option'); o.value = i; o.textContent = c[0] + ' ' + (c[1] === '+' ? '' : c[1]); sel.appendChild(o);
+    });
+    var setCode = function () {
+      var code = COUNTRIES[sel.value][1], v = phone.value.replace(/^\+\d*\s?/, '');
+      phone.value = code + (code === '+' ? '' : ' ') + v;
+    };
+    sel.addEventListener('change', setCode); setCode();
+  }
+
+  // --- Форма ---
+  var form = document.getElementById('leadForm'), started = false;
+  if (!form) return;
+  form.addEventListener('focusin', function () { if (!started) { started = true; track('form_start'); } });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var err = form.querySelector('.err'); err.textContent = '';
+    var f = form.elements;
+    var name = f.fullname.value.trim(), tel = phone.value.trim(), digits = tel.replace(/\D/g, '');
+    if (name.length < 2) { err.textContent = 'Напишите, как к вам обращаться'; f.fullname.focus(); return; }
+    if (digits.length < 9) { err.textContent = 'Проверьте номер — нужен номер с кодом страны'; phone.focus(); return; }
+    if (!f.agree.checked) { err.textContent = 'Нужно согласие на обработку данных'; return; }
+
+    // Открытый вопрос: чем подробнее человек описывает запрос, тем он теплее. Пороги — гипотеза, сверить по продажам
+    var request = (f.request ? f.request.value : '').trim();
+    var words = (request.match(/[A-Za-zА-Яа-яЁёІіЇїЄєҐґ0-9]+/g) || []).length;
+    var tier = words === 0 ? 'пусто' : words <= 5 ? 'коротко' : words <= 20 ? 'средне' : 'подробно';
+
+    var eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+    var payload = {
+      landing: C.LANDING, name: name, phone: tel,
+      request_text: request, request_words: words, request_tier: tier,
+      extra: [].reduce.call(form.querySelectorAll('[data-extra]'), function (o, el) { o[el.name] = el.value.trim(); return o; }, {}),
+      country: COUNTRIES[sel.value][0], messenger: f.messenger.value,
+      answers: C.getAnswers ? C.getAnswers() : C.answers, utm: utm,
+      page: location.href, event_id: eventId, ts: new Date().toISOString()
+    };
+    var btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Отправляем…';
+
+    var done = function () {
+      try { if (window.fbq) fbq('track', 'Lead', { content_name: C.LANDING, request_words: words, request_tier: tier }, { eventID: eventId }); } catch (e) {}
+      track('lead_submit', { request_words: words, request_tier: tier });
+      if (tier === 'подробно') track('lead_detailed', { request_words: words });   // для конверсии «тёплая заявка» в Meta
+      showThanks(payload);
+    };
+    if (!C.WEBHOOK_URL) { console.warn('WEBHOOK_URL не задан — заявка не ушла в CRM', payload); done(); return; }
+    fetch(C.WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+      .then(done)
+      .catch(function () {
+        btn.disabled = false; btn.textContent = C.SUBMIT_TEXT;
+        err.textContent = 'Не получилось отправить. Напишите нам в WhatsApp — кнопка ниже.';
+        form.querySelector('.fallback').hidden = false;
+      });
+  });
+
+  form.querySelector('.fallback').href = 'https://wa.me/' + C.WHATSAPP;
+
+  function showThanks(p) {
+    var box = document.getElementById('thanks');
+    form.hidden = true; box.hidden = false;
+    box.parentElement.querySelectorAll(':scope > h3, :scope > .back, :scope > .stepno').forEach(function (el) { el.hidden = true; });
+    var msg = C.waText(p) + (p.request_text ? '\n\nМой запрос: ' + p.request_text : '');
+    box.querySelector('.wa').href = 'https://wa.me/' + C.WHATSAPP + '?text=' + encodeURIComponent(msg);
+    var ch = box.querySelector('.channel'); if (ch) { if (C.CHANNEL_URL) ch.href = C.CHANNEL_URL; else ch.hidden = true; }
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (sticky) sticky.remove();
+  }
+})();
+</script>
+<script>
+(function () {
+  var s = document.getElementById('sum'), o = document.getElementById('sumOut'), r = document.getElementById('inc');
+  var f = function (n) { return n.toLocaleString('ru-RU').replace(/,/g, ' ') + ' €'; };
+  s.addEventListener('input', function () { var v = +s.value; o.textContent = f(v); r.textContent = f(v * 2) + ' – ' + f(v * 3); track('calc_use'); });
+  var b = document.getElementById('brands'), m = document.getElementById('moreBrands');
+  m.addEventListener('click', function () { b.classList.toggle('open'); m.textContent = b.classList.contains('open') ? 'Свернуть' : 'Показать все бренды'; });
+})();
+</script>
+</body>
+</html>

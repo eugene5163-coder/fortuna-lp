@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Расчёт закупки сезона — FORTUNA-S, Италия</title>
+<meta name="description" content="Закажите расчёт закупки сезона за 2 минуты: бюджет, количество вещей и логистика для вашего магазина — до открытия предзаказа на весну-лето 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Maison FORTUNA-S — общая дизайн-система лендингов =====
+   Светлые фоны, антиква Playfair Display для заголовков, Jost для текста.
+   Акцент страницы задаётся переменной --acc в самой странице. */
+:root{
+  --ivory:#FBF8F3; --paper:#FFFDF9; --sand:#F1EBE1; --stone:#E7DFD2; --line:#DCD2C2;
+  --ink:#2B2420; --ink2:#4A413A; --mute:#7A6F64;
+  --acc:#8C6B3F; --acc-soft:#F3ECE0;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:72px}                    /* цель якоря не уходит под закреплённую шапку */
+body{background:var(--ivory);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--acc-soft)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px;margin-left:auto;margin-right:auto}
+.center{text-align:center}
+
+/* Типографика */
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-.005em}
+h1{font-size:clamp(31px,4.2vw,56px);line-height:1.1}
+h2{font-size:clamp(28px,3.8vw,46px);line-height:1.12;margin-bottom:18px}
+h3{font-size:clamp(21px,2.2vw,26px);line-height:1.25}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--acc)}
+.over{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
+.it{font-family:var(--serif);font-style:italic}
+.lead{font-size:19px;line-height:1.6;color:var(--ink2);max-width:600px}
+.center .lead{margin-left:auto;margin-right:auto}
+.small{font-size:14px;color:var(--mute)}
+.rule{width:56px;height:1px;background:var(--acc);border:0;margin:26px 0}
+.center .rule{margin-left:auto;margin-right:auto}
+
+/* Шапка */
+.annonce{background:var(--sand);text-align:center;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);padding:11px 16px}
+.mast{text-align:center;padding:20px 0 18px;border-bottom:1px solid var(--line);background:var(--ivory)}
+.mast svg{width:34px;height:34px;color:var(--acc);margin:0 auto 6px}
+.mast .wm{font:400 19px/1 var(--serif);letter-spacing:.34em;padding-left:.34em}
+.mast .sub{font:500 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-top:8px;padding-left:.3em}
+/* На мобильном шапка в одну строку — первый экран отдаём предложению */
+@media(max-width:700px){
+  .annonce{font-size:10px;letter-spacing:.12em;padding:9px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mast{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 0}
+  .mast svg{width:24px;height:24px;margin:0}
+  .mast .wm{font-size:16px}
+  .mast .sub{display:none}
+}
+
+/* Кнопки и ссылки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:0 38px;background:var(--ink);color:var(--ivory);border:1px solid var(--ink);border-radius:0;text-decoration:none;cursor:pointer;font:500 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .2s,color .2s}
+.btn:hover{background:var(--acc);border-color:var(--acc)}
+.btn.wide{width:100%}
+.btn.ghost{background:transparent;color:var(--ink);margin-top:12px}
+.btn.ghost:hover{background:var(--ink);color:var(--ivory)}
+.link{display:inline-block;font:500 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:7px;border-bottom:1px solid currentColor;transition:color .2s}
+.link:hover{color:var(--acc)}
+.cta-note{font-size:13px;color:var(--mute);margin-top:14px;letter-spacing:.02em}
+
+/* Секции */
+section{padding:88px 0}
+.bg-sand{background:var(--sand)}
+.bg-paper{background:var(--paper)}
+.head{margin-bottom:44px}
+@media(max-width:700px){section{padding:64px 0}.head{margin-bottom:32px}}
+
+/* Разворот фото + текст */
+.split{display:grid;grid-template-columns:1fr;background:var(--paper)}
+.split .ph-col{position:relative;min-height:62vh;overflow:hidden}
+.split .ph-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .tx-col{padding:56px 22px;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:960px){.split{grid-template-columns:1fr 1fr;min-height:720px}.split .ph-col{min-height:auto}.split .tx-col{padding:80px 8vw 80px 6vw}.split.rev .ph-col{order:2}}
+
+/* Факты в строку */
+.facts{display:flex;flex-wrap:wrap;gap:0;margin:34px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{flex:1 1 0;min-width:0;padding:16px 10px;text-align:center;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font:400 26px/1.05 var(--serif);color:var(--ink)}
+.facts span{display:block;font-size:12px;line-height:1.35;color:var(--mute);margin-top:6px;letter-spacing:.04em}
+
+/* Нумерованный редакционный список (I, II, III …) */
+.roman{list-style:none;counter-reset:r;display:grid;gap:0;border-top:1px solid var(--line)}
+.roman>li{counter-increment:r;display:grid;grid-template-columns:64px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line);position:relative}
+.roman>li:before{content:counter(r,upper-roman);font:italic 400 30px/1 var(--serif);color:var(--acc)}
+.roman b{display:block;font:400 21px/1.3 var(--serif);margin-bottom:6px}
+.roman span{color:var(--ink2);font-size:16px}
+.roman.cols{border-top:0}
+@media(min-width:960px){.roman.cols{grid-template-columns:repeat(var(--n,3),1fr);column-gap:36px}.roman.cols>li{grid-template-columns:1fr;border-top:1px solid var(--line);border-bottom:0;padding-top:28px}}
+
+/* Колонки с тонкой линейкой сверху */
+.cols3{display:grid;gap:34px}
+.cols3>div{border-top:1px solid var(--ink);padding-top:22px}
+.cols3 h3{margin-bottom:10px}
+.cols3 p{color:var(--ink2);font-size:16px}
+@media(min-width:960px){.cols3{grid-template-columns:repeat(var(--n,3),1fr);gap:44px}}
+
+/* Цитата */
+.quote{font:italic 400 clamp(24px,3vw,36px)/1.35 var(--serif);color:var(--ink)}
+.quote:before{content:"«"}.quote:after{content:"»"}
+.cite{display:block;margin-top:18px;font:500 12px/1.5 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+
+/* Ведомость (как накладная) */
+.ledger{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--paper)}
+.ledger .row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.ledger .row:last-child{border-bottom:0}
+.ledger .row span{font-size:15px;color:var(--ink2);letter-spacing:.02em}
+.ledger .row b{font:400 clamp(22px,3vw,30px)/1 var(--serif);white-space:nowrap}
+.ledger .row.total{background:var(--acc-soft)}
+.ledger .row.total b{color:var(--acc)}
+.ledger-cap{display:flex;justify-content:space-between;font:500 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);padding:0 2px 12px}
+
+/* Заготовки под материалы (видимые, но аккуратные) */
+.ph{position:relative;background:var(--stone);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;font:500 11px/1.6 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.ph:before,.todo-tag{content:"Материал";position:absolute;left:10px;top:10px;background:#C7681E;color:#fff;font:600 9px/1 var(--sans);letter-spacing:.16em;padding:5px 7px;text-transform:uppercase}
+.todo{outline:1px dashed #C7681E;outline-offset:6px}
+.todo-note{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.04em;color:#B05A17;margin-top:12px}
+
+/* Квиз и форма — «карточка записи» */
+.card-rdv{background:var(--paper);border:1px solid var(--line);max-width:640px;margin:0 auto;padding:40px 28px;position:relative}
+.card-rdv:before{content:"";position:absolute;inset:7px;border:1px solid var(--stone);pointer-events:none}
+@media(max-width:520px){.card-rdv{padding:30px 18px}}
+.bar{display:flex;gap:6px;margin-bottom:28px}
+.bar i{flex:1;height:2px;background:var(--line);transition:background .3s}
+.bar i.on{background:var(--ink)}
+.stepno{font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.step{display:none}
+.step.on{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.step h3{margin-bottom:22px}
+.opts{display:grid;gap:10px}
+.opt{width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);padding:17px 18px;font:400 17px/1.35 var(--sans);color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:border-color .2s,background .2s}
+.opt:after{content:"→";color:var(--mute)}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.opt.sel:after{color:var(--ivory)}
+.back{background:none;border:0;color:var(--mute);font:400 14px var(--sans);margin-top:18px;cursor:pointer;letter-spacing:.04em}
+.back:hover{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0}
+.chip b{display:block;font:400 15px/1 var(--sans);padding:13px 16px;border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:all .2s}
+.chip input:checked+b{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.chip input:focus-visible+b{outline:2px solid var(--acc);outline-offset:2px}
+.fld{display:block;margin-bottom:22px}
+.fld>span{display:block;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.fld input,.fld select{width:100%;font:400 18px var(--sans);padding:10px 0 12px;border:0;border-bottom:1px solid var(--ink2);background:transparent;color:var(--ink);border-radius:0;-webkit-appearance:none;appearance:none}
+.fld select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%232B2420'/%3E%3C/svg%3E") right 4px center no-repeat}
+.fld input:focus,.fld select:focus{outline:0;border-bottom:2px solid var(--acc)}
+.fld input::placeholder,.fld textarea::placeholder{color:#B3A99C}
+/* Открытый вопрос: подробность ответа — сигнал теплоты лида */
+.fld textarea{width:100%;font:400 16px/1.5 var(--sans);padding:12px 14px;border:1px solid var(--line);border-radius:0;background:var(--paper);color:var(--ink);resize:vertical;min-height:112px}
+.fld textarea:focus{outline:0;border-color:var(--acc)}
+.fld.req>span{text-transform:none;letter-spacing:0;font:500 16px/1.4 var(--sans);color:var(--ink)}
+.fld.req small{display:block;font-size:13px;color:var(--mute);margin-top:6px;line-height:1.45}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0}
+.seg b{display:block;text-align:center;padding:14px;border:1px solid var(--line);font:400 16px var(--sans);cursor:pointer;background:var(--paper)}
+.seg input:checked+b{border-color:var(--ink);background:var(--ink);color:var(--ivory)}
+.agree{display:flex;gap:10px;font-size:13px;line-height:1.5;color:var(--mute);margin:2px 0 12px;align-items:flex-start}
+.agree input{margin-top:3px;accent-color:var(--ink)}
+.err{color:#A3261E;font-size:14px;min-height:22px}
+.fallback{display:block;text-align:center;margin-top:12px;font:500 12px var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.micro{font-size:13px;color:var(--mute);margin-top:14px;text-align:center}
+#thanks{text-align:center}
+#thanks .kick{font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+#thanks h3{font-size:30px;margin-bottom:14px}
+#thanks p{color:var(--ink2);margin-bottom:26px}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;font:400 20px/1.35 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font:300 26px/1 var(--sans);color:var(--acc)}
+.faq details[open] summary:after{content:"−"}
+.faq p{margin-top:12px;color:var(--ink2);font-size:16px}
+
+/* Полоса доказательства сразу после первого экрана */
+.proof{padding:34px 0;border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;gap:22px;align-items:center}
+.proof q{display:block;font:italic 400 clamp(21px,2.4vw,28px)/1.3 var(--serif);quotes:"«" "»"}
+.proof q+span{display:block;font-size:13px;color:var(--mute);margin-top:8px;letter-spacing:.04em}
+.proof .pn{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.proof .pn b{display:block;font:400 clamp(26px,3vw,34px)/1 var(--serif)}
+.proof .pn span{display:block;font-size:12px;line-height:1.4;color:var(--mute);margin-top:6px}
+
+
+/* Повтор кнопки после блока */
+.again{text-align:center;margin-top:46px}
+
+/* Что вы получите + что будет после заявки */
+.leadwrap{display:grid;gap:40px;max-width:1080px;margin:0 auto}
+@media(min-width:960px){.leadwrap{grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}.leadwrap .card-rdv{margin:0;max-width:none}}
+.get h3{margin-bottom:16px}
+.get ul{list-style:none;display:grid;gap:14px;margin-bottom:34px}
+.get li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:16px;line-height:1.5;color:var(--ink2)}
+.get li:before{content:"";width:16px;height:1px;background:var(--acc);margin-top:12px}
+.get li b{color:var(--ink);font-weight:500}
+.get .bonus{background:var(--acc-soft);padding:16px 18px;margin:-12px 0 34px;font-size:15px;line-height:1.5}
+.get .bonus b{display:block;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.get ol{list-style:none;counter-reset:g;display:grid;gap:12px}
+.get ol li{counter-increment:g;grid-template-columns:28px 1fr}
+.get ol li:before{content:counter(g);width:auto;height:auto;background:none;margin:0;font:400 18px/1.3 var(--serif);color:var(--acc)}
+
+/* Реальные кейсы с видео-отзывами */
+.rc{display:grid;gap:22px}
+@media(min-width:960px){.rc{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}}
+.rc-pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:6px;margin-bottom:18px}
+.rc-pics img{width:100%;height:110px;object-fit:cover}
+/* Галерея реальных фото */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal figure{position:relative;overflow:hidden}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .6s}
+.gal figcaption{font-size:12.5px;line-height:1.4;color:var(--mute);margin-top:8px}
+.gal figure:first-child{grid-column:span 2}
+.gal figure:first-child img{aspect-ratio:16/10;object-position:50% 30%}
+@media(min-width:960px){.gal{grid-template-columns:repeat(4,1fr);gap:16px}.gal figure:first-child{grid-column:span 2;grid-row:span 2}.gal figure:first-child img{aspect-ratio:auto;height:calc(100% - 28px)}}
+.trust{display:flex;gap:10px;align-items:center;justify-content:center;font-size:12px;line-height:1.45;color:var(--mute);margin-top:16px;text-align:left}
+.trust:before{content:"";flex:0 0 22px;height:22px;border:1px solid var(--acc);border-radius:50%;background:radial-gradient(circle,var(--acc) 0 3px,transparent 4px)}
+.rc-card{background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#111;cursor:pointer;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt i{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:rgba(255,255,255,.92)}
+.yt i:after{content:"";position:absolute;left:25px;top:20px;border-left:17px solid var(--acc);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.yt em{position:absolute;left:12px;top:12px;background:var(--paper);color:var(--ink);font:500 10px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:7px 9px;font-style:normal}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.rc-body{padding:24px 22px 26px;display:flex;flex-direction:column;flex:1}
+.rc-q{font:italic 400 21px/1.35 var(--serif);margin-bottom:14px}
+.rc-who{font-size:14px;color:var(--mute);margin-bottom:18px;line-height:1.45}
+.rc-who b{display:block;color:var(--ink);font-weight:500;font-size:16px}
+.rc dl{display:grid;gap:4px;margin-bottom:20px}
+.rc dt{font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-top:12px}
+.rc dd{font-size:15px;line-height:1.5;color:var(--ink2)}
+.rc-n{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto}
+.rc-n b{display:block;font:500 22px/1.1 var(--serif);color:var(--ink)}
+.rc-n span{display:block;font-size:12px;line-height:1.35;color:var(--mute);margin-top:4px}
+
+/* Подвал */
+footer{background:var(--sand);text-align:center;padding:54px 22px 120px}
+footer .wm{font:400 17px/1 var(--serif);letter-spacing:.34em;padding-left:.34em}
+footer p{font-size:13px;color:var(--mute);margin-top:14px;line-height:1.7}
+footer a{color:var(--mute)}
+
+/* Закреплённая кнопка на мобильном */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,243,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;min-height:52px}
+@media(min-width:960px){.sticky{display:none}}
+
+/* ===== Мобильная версия — основная: 99,7% трафика из встроенного браузера Instagram / Facebook ===== */
+@media(max-width:700px){
+  .annonce{display:none}                         /* сезон уже есть в надзаголовке — экономим высоту первого экрана */
+  .over{font-size:13px;letter-spacing:.16em;margin-bottom:12px}
+  .lead{font-size:17px}
+  .small,.cta-note,.micro,.trust{font-size:13px}
+  .facts span,.proof .pn span,.rc-n span,.gal figcaption{font-size:13px}
+  .ledger-cap,.stepno,.fld>span,.rc dt{font-size:12px}
+  section{padding:52px 0}
+  .split .ph-col{min-height:44vh}
+  .split .tx-col{padding:40px 22px}
+  .head{margin-bottom:24px}
+  /* Кейсы и галерея — карусель со свайпом вместо длинного столбца */
+  .rc,.gal{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -22px;padding:0 22px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .rc::-webkit-scrollbar,.gal::-webkit-scrollbar{display:none}
+  .rc-card{flex:0 0 86%;scroll-snap-align:center}
+  .gal figure{flex:0 0 70%;scroll-snap-align:center}
+  .gal figure:first-child{grid-column:auto}
+  .gal figure:first-child img,.gal img{aspect-ratio:4/5;height:auto}
+  .swipe{display:block;font-size:13px;color:var(--mute);margin-top:6px}
+  /* Видео-отзывы: вертикальное превью — лицо крупнее, без чёрных полос */
+  .yt{aspect-ratio:4/5}
+  .yt img{object-fit:cover;object-position:50% 40%;transform:scale(1.35)}
+  /* Форма: сначала квиз, пояснения ниже */
+  .leadwrap .card-rdv{order:-1}
+}
+.swipe{display:none}
+/* Стрелки и точки под каруселью */
+.car-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.car-nav .pv,.car-nav .nx{flex:0 0 44px;height:44px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:400 24px/1 var(--sans);cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-bottom:3px}
+.car-nav .pv:disabled,.car-nav .nx:disabled{opacity:.35;cursor:default}
+.car-nav .dots{display:flex;gap:8px;justify-content:center;flex:1}
+.car-nav .dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
+.car-nav .dots button.on{background:var(--acc);width:22px;border-radius:4px}
+
+/* Появление при прокрутке */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Концепция C — «Бюро закупок»: бледно-голубая бумага, тёмно-синий, антиква Cormorant, бланк и сетка */
+:root{--ivory:#F3F6F9;--paper:#FFFFFF;--sand:#E7EEF4;--stone:#DCE5EC;--line:#CCD8E2;--ink:#1C2A3D;--ink2:#3A4A5E;--mute:#6B7B8F;--acc:#24406A;--acc-soft:#E3EBF5;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope','Helvetica Neue',Arial,sans-serif}
+body{font-size:16.5px}
+h1,h2,h3{font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(34px,4.6vw,60px);line-height:1.04}
+h2{font-size:clamp(30px,3.8vw,48px);line-height:1.06}
+h3{font-size:clamp(22px,2.2vw,27px)}
+h1 em,h2 em{font-weight:500}
+.btn{background:var(--acc);border-color:var(--acc)}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.roman b,.time b,.faq summary{font-weight:600}
+.ledger .row b,.proof .pn b,.facts b{font-weight:600}
+/* Шапка-бланк */
+.letter{background:var(--paper);border-bottom:3px double var(--line)}
+.letter .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:16px;padding-bottom:14px}
+.letter .wm{font:600 22px/1 var(--serif);letter-spacing:.2em}
+.letter .wm small{display:block;font:500 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:7px}
+.letter .no{text-align:right;font:500 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.letter .no b{display:block;color:var(--acc);font-weight:600}
+@media(max-width:520px){.letter .no{display:none}}
+/* Первый экран на сетке */
+.hero{padding:56px 0 72px;background-color:var(--ivory);background-image:linear-gradient(var(--stone) 1px,transparent 1px),linear-gradient(90deg,var(--stone) 1px,transparent 1px);background-size:28px 28px}
+.hero-grid{display:grid;gap:36px}
+.hero-txt{background:rgba(243,246,249,.86);padding:6px 0}
+.hero h1{margin-bottom:22px}
+.sig{display:flex;gap:16px;align-items:center;margin-top:28px}
+.sig img{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:34% 10%;border:1px solid var(--line)}
+.sig .it{font:italic 600 21px var(--serif);display:block}
+.sig small{display:block;font:500 11px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+@media(min-width:960px){.hero{padding:80px 0 96px}.hero-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:start}.hero-txt{padding:24px 0}}
+@media(max-width:959px){.hero{padding:34px 0 56px}}
+@media(max-width:700px){
+  .hero{padding:18px 0 40px;background-size:22px 22px}
+  .hero-grid{gap:18px}
+  .hero h1{font-size:30px;margin-bottom:12px}
+  .hero .over{margin-bottom:10px}
+  .hero .lead{font-size:16px}
+  .dsk,.sig{display:none}
+  .letter .wrap{padding-top:10px;padding-bottom:9px}
+  .letter .wm{font-size:18px}.letter .wm small{display:none}
+  .calc{padding:20px 18px}
+  .calc .cap{padding-bottom:12px}
+  .calc .q{padding:16px 0}
+}
+/* Калькулятор — лист бланка */
+.calc{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--acc);padding:30px 26px;box-shadow:0 18px 40px rgba(28,42,61,.08)}
+.calc:before{display:none}
+.calc .cap{display:flex;justify-content:space-between;font:600 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--acc);padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.calc .q{padding:20px 0;border-bottom:1px dashed var(--line)}
+.calc .ql{display:flex;justify-content:space-between;align-items:baseline;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.calc output{font:600 32px/1 var(--serif);color:var(--ink);letter-spacing:0;text-transform:none}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--line);outline:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--acc);border:4px solid var(--paper);box-shadow:0 0 0 1px var(--acc);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--acc);border:4px solid var(--paper);box-shadow:0 0 0 1px var(--acc)}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:10px}
+.chip input:checked+b{background:var(--acc);border-color:var(--acc)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.calc .fld{margin:0}
+.calc .go{margin-top:26px}
+/* Фото-разворот внутри секции */
+.pic{display:grid;gap:40px;align-items:center}
+.pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line)}
+.pic figcaption{font-size:12px;color:var(--mute);margin-top:8px}
+@media(min-width:960px){.pic{grid-template-columns:.8fr 1.2fr;gap:72px}}
+.banner{width:100%;height:clamp(200px,32vw,420px);object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+/* Календарь */
+.time{display:grid;gap:0;border-top:2px solid var(--acc)}
+.time div{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:150px 1fr;gap:16px}
+.time em{font:italic 600 20px/1.3 var(--serif);color:var(--acc)}
+.time b{display:block;font:600 22px/1.25 var(--serif);margin-bottom:4px}
+.time span{color:var(--ink2);font-size:16px}
+.time .now em:before{content:"● ";font-style:normal;font-size:12px;vertical-align:2px}
+@media(max-width:600px){.time div{grid-template-columns:1fr;gap:6px}}
+@media(min-width:960px){.time{grid-template-columns:repeat(4,1fr);border-top:0}.time div{grid-template-columns:1fr;border-top:2px solid var(--acc);border-bottom:0;padding:26px 28px 0 0}}
+.leadgrid{display:grid;gap:40px;max-width:1040px;margin:0 auto}
+@media(min-width:960px){.leadgrid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.sumrow b{font:600 19px/1.3 var(--serif)!important;text-align:right;white-space:normal!important}
+footer{background:var(--paper);border-top:3px double var(--line)}
+</style>
+</head>
+<body>
+
+<div class="annonce">Весна-лето 2027 · предзаказ с конца ноября</div>
+<div class="letter"><div class="wrap">
+  <div class="wm">FORTUNA-S<small>Торгово-консалтинговое агентство · Италия</small></div>
+  <div class="no">Бланк расчёта<b>Сезон весна-лето 2027</b></div>
+</div></div>
+
+<!-- ===== 1. Оффер + калькулятор ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt" data-sticky-after>
+      <span class="over">Для мультибрендовых бутиков · предзаказ весна-лето 2027</span>
+      <h1>Закажите расчёт закупки сезона за 2 минуты: <em>бюджет, количество вещей и логистика.</em></h1>
+      <p class="lead">Укажите площадь, категории и страну — расчёт по реальным закупкам FORTUNA-S пришлю в мессенджер<span class="dsk"> и проверю его с вами на 15-минутном звонке</span>.</p>
+      <div class="sig">
+        <img loading="lazy" decoding="async" src="/img/poluoborot.webp" alt="Наталья Мазур">
+        <div><span class="it">Наталья Мазур</span><small>20+ лет в Италии · клиенты из 13 стран</small></div>
+      </div>
+    </div>
+
+    <form class="calc" id="calc" onsubmit="return false">
+      <div class="cap"><span>Параметры магазина</span><span>Лист 1</span></div>
+      <div class="q">
+        <label class="ql" for="area">Площадь торгового зала <output id="areaOut">60 м²</output></label>
+        <input type="range" id="area" min="20" max="300" step="5" value="60">
+        <div class="scale"><span>20 м²</span><span>300 м²</span></div>
+      </div>
+      <div class="q">
+        <span class="ql">Что будете продавать</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="cat" value="Женская одежда" checked><b>Женская одежда</b></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Мужская одежда"><b>Мужская одежда</b></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Обувь"><b>Обувь</b></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Сумки и аксессуары"><b>Сумки и аксессуары</b></label>
+          <label class="chip"><input type="checkbox" name="cat" value="Детская одежда"><b>Детская</b></label>
+        </div>
+      </div>
+      <div class="q">
+        <span class="ql">Как закупаете</span>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="mode" value="Предзаказ весна-лето 2027" checked><b>Предзаказ весна-лето 2027</b></label>
+          <label class="chip"><input type="radio" name="mode" value="Готовый Склад, текущий сезон"><b>Готовый Склад</b></label>
+        </div>
+      </div>
+      <div class="q two" style="border-bottom:0">
+        <label class="fld"><span>Страна доставки</span>
+          <select id="calcCountry"><option>Казахстан</option><option>Украина</option><option>Узбекистан</option><option>Азербайджан</option><option>Грузия</option><option>Армения</option><option>Молдова</option><option>Кыргызстан</option><option>Страны ЕС</option><option>Другая</option></select></label>
+        <label class="fld"><span>Помещение</span>
+          <select id="place"><option>Подписано</option><option>В процессе</option><option>Уже работает магазин</option></select></label>
+      </div>
+      <a href="#lead" class="btn wide go" data-cta="calc">Получить расчёт</a>
+      <p class="micro">Бесплатно · без обязательств</p>
+    </form>
+  </div>
+</header>
+
+<!-- ===== 1б. Доказательство ===== -->
+<section class="proof bg-paper">
+  <div class="wrap">
+    <span class="over">FORTUNA-S в цифрах</span>
+    <div class="pn">
+      <div><b>до 29%</b><span>экономии бюджета закупки у наших клиентов</span></div>
+      <div><b>37+</b><span>городов в 13 странах, где работают наши клиенты</span></div>
+      <div><b>6+</b><span>лет — клиенты работают с нами в среднем</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4б. Кейсы ===== -->
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="over">Истории клиентов</span>
+      <h2>Как считали и закупали <em>бутики наших клиентов</em></h2>
+    </div>
+    <div class="rc"><article class="rc-card rv"><button class="yt" data-id="EKZo3HNkXyI" aria-label="Смотреть видео-отзыв: Юлия Кошелева"><img src="https://i.ytimg.com/vi/EKZo3HNkXyI/hqdefault.jpg" alt="Видео-отзыв: Юлия Кошелева" loading="lazy"><i></i><em>Видео-отзыв</em></button><div class="rc-body"><p class="rc-q">«Это всегда чёткость в работе»</p><p class="rc-who"><b>Юлия Кошелева</b>Сеть бутиков женской одежды Dolce Vita · Казахстан и Кипр</p><dl><dt>Задача</dt><dd>Открывать магазины женской одежды и обуви в разных странах — сегменты от среднего до премиум.</dd><dt>Решение</dt><dd>Подбор у сотен итальянских фабрик с учётом ассортимента, складских остатков, стоимости и сроков изготовления.</dd><dt>Результат</dt><dd>4 бутика за 14 лет: Алматы, Астана, Петропавловск и Avenue Makariou на Кипре.</dd></dl><div class="rc-n"><div><b>4</b><span>бутика</span></div><div><b>до 29%</b><span>экономии бюджета</span></div><div><b>14 лет</b><span>вместе</span></div></div></div></article><article class="rc-card rv"><button class="yt" data-id="1kc183TD-VI" aria-label="Смотреть видео-отзыв: Замира Буранкулова"><img src="https://i.ytimg.com/vi/1kc183TD-VI/hqdefault.jpg" alt="Видео-отзыв: Замира Буранкулова" loading="lazy"><i></i><em>Видео-отзыв</em></button><div class="rc-body"><p class="rc-q">«Я всегда знаю, что надёжный тыл у меня есть»</p><p class="rc-who"><b>Замира Буранкулова</b>Сеть бутиков женской одежды INVITO IN ITALY · Казахстан</p><dl><dt>Задача</dt><dd>Собрать свой бренд-портфель для каждого магазина сети.</dd><dt>Решение</dt><dd>Учли особенности региона, точку продаж и портрет покупателя. Работали на выставках White, Micam и Super.</dd><dt>Результат</dt><dd>4 магазина за 10 с лишним лет: два в Алматы и два в Астане.</dd></dl><div class="rc-pics"><img loading="lazy" decoding="async" src="/img/r_invito.webp" alt="Сеть бутиков женской одежды INVITO IN ITALY · Казахстан"></div><div class="rc-n"><div><b>4</b><span>магазина</span></div><div><b>до 29%</b><span>экономии бюджета</span></div><div><b>10+ лет</b><span>вместе</span></div></div></div></article><article class="rc-card rv"><button class="yt" data-id="QS8LM72UVfQ" aria-label="Смотреть видео-отзыв: Ольга Чеботарева"><img src="https://i.ytimg.com/vi/QS8LM72UVfQ/hqdefault.jpg" alt="Видео-отзыв: Ольга Чеботарева" loading="lazy"><i></i><em>Видео-отзыв</em></button><div class="rc-body"><p class="rc-q">«У меня не было никаких тревог, даже на этапе открытия нового бизнеса»</p><p class="rc-who"><b>Ольга Чеботарева</b>Бутик детской одежды Tesorino · Благовещенск</p><dl><dt>Задача</dt><dd>От идеи до магазина детской одежды и обуви — обувь, которая подходит для Дальнего Востока.</dd><dt>Решение</dt><dd>Выставка Pitti Bimbo во Флоренции, заранее назначены встречи с 7 фабриками, весь ассортимент заказан на сезон вперёд.</dd><dt>Результат</dt><dd>Груз единой доставкой — в Благовещенске перед зимним сезоном. Магазин занял свою нишу в городе и увеличивает закупки.</dd></dl><div class="rc-n"><div><b>7</b><span>фабрик</span></div><div><b>−22%</b><span>к бюджету</span></div><div><b>100%</b><span>ассортимента заранее</span></div></div></div></article></div><span class="swipe">← листайте кейсы →</span>
+    <p style="margin-top:40px"><a href="#calc" class="btn" data-cta="cases">Посчитать мою закупку</a></p>
+  </div>
+</section>
+
+<!-- ===== 4. Календарь сезона ===== -->
+<section class="bg-paper">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="over">Почему считать сейчас</span>
+      <h2>Календарь сезона <em>весна-лето 2027</em></h2>
+    </div>
+    <div class="time rv">
+      <div class="now"><em>сейчас</em><div><b>Расчёт и выбор брендов</b><span>Решаем, сколько и чего закупать, до открытия предзаказа</span></div></div>
+      <div><em>конец ноября</em><div><b>Открывается предзаказ</b><span>Заказ у фабрик и предоплата 30%. Самые продаваемые модели — за 7 месяцев до выхода в ритейл</span></div></div>
+      <div><em>после предзаказа</em><div><b>Производство и отгрузка</b><span>Фабрики шьют и отгружают заказ, оформляем документы</span></div></div>
+      <div><em>к началу сезона</em><div><b>Товар в магазине</b><span>Доставка до терминала или по вашему адресу</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. Наталья и безопасность денег ===== -->
+<section style="padding:0">
+  <div class="split">
+    <div class="ph-col"><img loading="lazy" decoding="async" src="/img/r_natalia-arki.webp" alt="Наталья Мазур" style="object-position:50% 20%"></div>
+    <div class="tx-col rv">
+      <span class="over">Ваш расчёт проверю я</span>
+      <h2>Наталья Мазур</h2>
+      <p class="lead" style="margin-bottom:16px">Меня зовут Наталья Мазур. Более 20 лет я живу и работаю в Италии и руковожу торгово-консалтинговым агентством FORTUNA-S. Мы сопровождаем сезонные закупки и поставки для premium-магазинов из 13 стран.</p>
+      <p class="lead">В рабочем портфеле агентства более 320 итальянских брендов мужской, женской и детской одежды, обуви и аксессуаров. Но ценность этой работы состоит не только в доступе к фабрикам и брендам.</p>
+      <hr class="rule">
+      <ol class="roman" style="border-top:0">
+        <li><div><b>Вы платите фабрике напрямую</b><span>По накладной на ваше имя, цена зафиксирована</span></div></li>
+        <li><div><b>Дорожная карта закупки</b><span>Каждый шаг от заказа до получения товара зафиксирован</span></div></li>
+        <li><div><b>Рекламации на агентстве</b><span>Возврат и обмен при браке, недопоставке или пересорте решаем с фабрикой</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. Форма ===== -->
+<section id="lead">
+  <div class="wrap">
+    <div class="head center">
+      <span class="over">Последний шаг</span>
+      <h2>Куда прислать расчёт?</h2>
+    </div>
+    <div class="leadwrap">
+      <div class="get">
+        <div class="ledger-cap"><span>Ваши параметры</span><a href="#calc" style="color:var(--acc)">изменить</a></div>
+        <div class="ledger" id="sumList" style="margin-bottom:34px"></div>
+        <h3>Что вы получите</h3>
+        <ul>
+          <li><span><b>Расчёт по пяти статьям</b> — товар, логистика, таможня, маркировка, резерв</span></li>
+          <li><span><b>15-минутный звонок со мной</b> — проверю расчёт под ваш магазин</span></li>
+        </ul>
+        <div class="bonus"><b>В подарок</b>Инструкция «Предзаказы: как организовать продажу ещё не купленного товара»</div>
+        <h3>Что будет после заявки</h3>
+        <ol>
+          <li><span>В течение рабочего дня напишу вам в выбранный мессенджер</span></li>
+          <li><span>Пришлю расчёт и инструкцию</span></li>
+          <li><span>Согласуем время для звонка</span></li>
+        </ol>
+      </div>
+      <div class="card-rdv"><form id="leadForm" novalidate>
+  <label class="fld req"><span>Опишите ваш магазин и что хотите получить от расчёта</span>
+    <textarea name="request" rows="4" maxlength="2000" placeholder="Например: бутик 60 м² в Алматы, средний чек около 300 €. Хочу понять, хватит ли 40 000 € на весну-лето и сколько оставить на докупку в сезоне."></textarea>
+    <small>Чем подробнее опишете, тем точнее будет расчёт.</small></label>
+  
+  <label class="fld"><span>Как к вам обращаться</span>
+    <input name="fullname" autocomplete="name" placeholder="Ваше имя"></label>
+  <div class="fld"><span>Куда написать</span>
+    <div class="seg">
+      <label><input type="radio" name="messenger" value="WhatsApp" checked><b>WhatsApp</b></label>
+      <label><input type="radio" name="messenger" value="Telegram"><b>Telegram</b></label>
+    </div>
+  </div>
+  <label class="fld"><span>Страна</span><select id="country" name="country"></select></label>
+  <label class="fld"><span>Номер телефона</span>
+    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"></label>
+  <label class="agree"><input type="checkbox" name="agree" checked>
+    <span>Согласен(-на) на обработку персональных данных по <a href="https://shopitaly.biz/privacy/" target="_blank" rel="noopener">политике конфиденциальности</a></span></label>
+  <p class="err" role="alert"></p>
+  <button type="submit" class="btn wide">Получить расчёт</button>
+  <a class="fallback" hidden target="_blank" rel="noopener">Написать в WhatsApp</a>
+  <p class="micro">Без рассылок. Отвечаем пн–сб, 9:00–20:00 по времени Италии.</p>
+  <p class="trust">FORTUNA-S работает в Италии с 2004 года · лицензия в ТПП Италии № IT03920400409 · Римини</p>
+</form>
+<div id="thanks" hidden>
+  <p class="kick">Заявка получена</p>
+  <h3>Спасибо! Считаем вашу закупку</h3>
+  <p>Пришлю расчёт в выбранный мессенджер в рабочее время и предложу время для звонка. Хотите быстрее — напишите мне сами, параметры уже в сообщении.</p>
+  <a class="btn wide wa" target="_blank" rel="noopener" data-cta="thanks_whatsapp">Написать сейчас в WhatsApp</a>
+  <a class="btn ghost wide channel" target="_blank" rel="noopener" data-cta="thanks_channel">Канал «Карта открытия»</a>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. FAQ ===== -->
+<section class="bg-sand">
+  <div class="wrap narrow">
+    <div class="head center"><span class="over">Перед заявкой</span><h2>Вопросы</h2></div>
+    <div class="faq">
+      <details><summary>Насколько точным будет расчёт?</summary><p>Это ориентир по реальным закупкам агентства для похожей площади и категорий. На звонке я уточню формат магазина и ценовой уровень и скорректирую цифры.</p></details>
+      <details><summary>Помещение ещё не подписано — есть смысл считать?</summary><p>Да. Расчёт показывает, сколько товара и денег нужно под эту площадь, — это помогает решить, подходит ли помещение.</p></details>
+      <details><summary>Как платить за предзаказ?</summary><p>Напрямую фабрике, по накладной на ваше имя, только в евро: банковский перевод, карта или оплата по ссылке. При заказе — предоплата 30%, остаток — до отправки товара.</p></details>
+      <details><summary>Нужно ли платить итальянский НДС 22%?</summary><p>Нет, если товар вывозится за пределы Италии для продажи: НДС не начисляется. Агентство гарантирует поставщикам возврат закрытых таможенных документов.</p></details>
+    </div>
+    <p class="center" style="margin-top:44px"><a href="#calc" class="btn" data-cta="faq">Посчитать мою закупку</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wm" style="font-family:var(--serif);font-weight:600">FORTUNA-S</div>
+  <p>Via M. Amari, 28 · Rimini 47923 · Италия · P.I. 03920400409<br><a href="https://shopitaly.biz/privacy/" target="_blank" rel="noopener">Политика конфиденциальности</a></p>
+</footer>
+
+<div class="sticky" data-always><a href="#lead" class="btn" data-cta="sticky">Получить расчёт</a></div>
+
+<script>
+window.LP = {
+  LANDING: 'C-raschet-sezona',
+  PIXEL_ID: '697168424303530',          // Pixel с shopitaly.biz
+  WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbzzgiMkjYTltKWRDMD7HB92alm8CuRst7vkDzZ0glmq8ZhK-WLRFz9YQhZg5GgpxvDJ/exec',                      // ← вставить адрес вебхука CRM / Make / Google Sheets
+  WHATSAPP: '393287076811',
+  CHANNEL_URL: '',                      // ← ссылка-приглашение в канал «Карта открытия» (необязательно)
+  SUBMIT_TEXT: 'Получить расчёт',
+  getAnswers: function () {
+    var f = document.getElementById('calc');
+    return {
+      area_m2: +f.querySelector('#area').value,
+      categories: [].map.call(f.querySelectorAll('[name=cat]:checked'), function (x) { return x.value; }),
+      mode: f.querySelector('[name=mode]:checked').value,
+      delivery_country: f.querySelector('#calcCountry').value,
+      place: f.querySelector('#place').value
+    };
+  },
+  waText: function (p) {
+    var a = p.answers;
+    return 'Здравствуйте! Хочу расчёт закупки сезона.\nПлощадь: ' + a.area_m2 + ' м²\nКатегории: ' + (a.categories.join(', ') || '—') +
+      '\nФормат: ' + a.mode + '\nДоставка: ' + a.delivery_country + '\nПомещение: ' + a.place;
+  }
+};
+</script>
+<script>/* ===== Общая логика: Pixel, UTM, квиз, форма, вебхук, sticky-кнопка, появление блоков ===== */
+(function () {
+  var C = window.LP;
+  C.answers = C.answers || {};
+
+  // --- Meta Pixel ---
+  if (C.PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+  window.track = function (name, data) {
+    try { if (window.fbq) fbq('trackCustom', name, Object.assign({ landing: C.LANDING }, data || {})); } catch (e) {}
+    try { (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name, landing: C.LANDING }, data || {})); } catch (e) {}
+  };
+
+  // --- UTM и fbclid: заявка знает, с какого объявления пришла ---
+  var params = new URLSearchParams(location.search), utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function (k) {
+    if (params.get(k)) utm[k] = params.get(k);
+  });
+
+  // --- Ссылки-якоря (#lead, #calc): всегда прокручиваем внутри этой страницы.
+  // Без этого во встроенном виде (iframe, превью) ссылка уводит на адрес родительской страницы ---
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if (!a || a.hasAttribute('data-pick')) return;
+    var id = a.getAttribute('href').slice(1), el = id && document.getElementById(id);
+    if (!el) return;
+    ev.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // --- Клики по кнопкам ---
+  document.querySelectorAll('[data-cta]').forEach(function (el) {
+    el.addEventListener('click', function () { track('cta_click', { place: el.getAttribute('data-cta') }); });
+  });
+
+  // --- Видео-отзывы: YouTube грузится только по нажатию, чтобы страница оставалась лёгкой ---
+  document.querySelectorAll('.yt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true;
+      b.innerHTML = ''; b.appendChild(f);
+      track('video_review', { id: b.dataset.id });
+    }, { once: true });
+  });
+
+  // --- Карусели (ниши, кейсы, галерея): стрелки и точки — листаются и мышью, и пальцем ---
+  document.querySelectorAll('.niches, .rc, .gal, .reel').forEach(function (tr) {
+    var items = [].slice.call(tr.children);
+    if (items.length < 2 || tr.scrollWidth <= tr.clientWidth + 10) return;     // на широком экране это сетка — стрелки не нужны
+    var nav = document.createElement('div'); nav.className = 'car-nav';
+    nav.innerHTML = '<button type="button" class="pv" aria-label="Назад">‹</button><span class="dots"></span><button type="button" class="nx" aria-label="Дальше">›</button>';
+    var dots = nav.querySelector('.dots');
+    items.forEach(function (_, i) {
+      var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Карточка ' + (i + 1));
+      d.addEventListener('click', function () { go(i); }); dots.appendChild(d);
+    });
+    tr.parentNode.insertBefore(nav, tr.nextSibling);
+    var cur = 0;
+    // положение карточки внутри ленты — по реальным координатам на экране, не зависит от вложенности блоков
+    var posOf = function (it) { return tr.scrollLeft + it.getBoundingClientRect().left - tr.getBoundingClientRect().left; };
+    var go = function (i) {
+      cur = Math.max(0, Math.min(i, items.length - 1));
+      var it = items[cur];
+      // карточки «прилипают» к краю или к центру (scroll-snap) — прокручиваем так же, иначе браузер вернёт ленту назад
+      var start = /start/.test(getComputedStyle(it).scrollSnapAlign);
+      tr.scrollTo({ left: Math.max(0, start ? posOf(it) : posOf(it) - (tr.clientWidth - it.offsetWidth) / 2), behavior: 'smooth' });
+      mark(); track('carousel', { step: cur + 1 });
+    };
+    var mark = function () {
+      [].forEach.call(dots.children, function (d, k) { d.classList.toggle('on', k === cur); });
+      nav.querySelector('.pv').disabled = cur === 0;
+      nav.querySelector('.nx').disabled = cur === items.length - 1;
+    };
+    nav.querySelector('.pv').addEventListener('click', function () { go(cur - 1); });
+    nav.querySelector('.nx').addEventListener('click', function () { go(cur + 1); });
+    var t;
+    tr.addEventListener('scroll', function () {                                   // свайп пальцем — точки догоняют
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var mid = tr.scrollLeft + tr.clientWidth / 2, best = 0, dist = 1e9;
+        items.forEach(function (it, k) { var c = posOf(it) + it.offsetWidth / 2, dd = Math.abs(c - mid); if (dd < dist) { dist = dd; best = k; } });
+        cur = best; mark();
+      }, 120);
+    }, { passive: true });
+    var hint = nav.nextElementSibling; if (hint && hint.classList.contains('swipe')) hint.hidden = true;
+    mark();
+  });
+
+  // --- Плавное появление блоков ---
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else rv.forEach(function (el) { el.classList.add('in'); });
+
+  // --- Закреплённая кнопка: после первого экрана, прячется у формы ---
+  var sticky = document.querySelector('.sticky'), hero = document.querySelector('[data-sticky-after]') || document.querySelector('.hero'), formBox = document.getElementById('lead');
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    var always = sticky.hasAttribute('data-always');   // кнопка видна с первого экрана (когда основная кнопка ниже сгиба)
+    var heroVisible = !always, formVisible = false;
+    var upd = function () { sticky.classList.toggle('on', !heroVisible && !formVisible); };
+    if (!always) new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(hero);
+    upd();
+    if (formBox) new IntersectionObserver(function (e) { formVisible = e[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(formBox);
+  }
+
+  // --- Квиз: шаги .step[data-q], .opt — один ответ, .next — несколько (чекбоксы) ---
+  var steps = [].slice.call(document.querySelectorAll('.step')), cur = 0;
+  var txt = function (el) { return el.textContent.replace(/ /g, ' ').trim(); };  // неразрывные пробелы типографа → обычные
+  if (steps.length) {
+    var bar = document.querySelector('.bar');
+    if (bar) steps.forEach(function () { bar.appendChild(document.createElement('i')); });
+    var go = function (i) {
+      steps[cur].classList.remove('on'); cur = Math.max(0, Math.min(i, steps.length - 1)); steps[cur].classList.add('on');
+      if (bar) [].forEach.call(bar.children, function (b, k) { b.classList.toggle('on', k <= cur); });
+      var no = steps[cur].querySelector('.stepno');
+      if (no) no.textContent = cur === steps.length - 1 ? 'Последний шаг' : 'Вопрос ' + (cur + 1) + ' из ' + (steps.length - 1);
+      track('quiz_step', { step: cur + 1 });
+    };
+    C.goStep = go;
+    steps.forEach(function (s, i) {
+      s.querySelectorAll('.opt').forEach(function (o) {
+        o.addEventListener('click', function () {
+          s.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('sel'); });
+          o.classList.add('sel'); C.answers[s.dataset.q] = txt(o);
+          if (i === 0) track('quiz_start');
+          setTimeout(function () { go(i + 1); }, 220);
+        });
+      });
+      var nx = s.querySelector('.next');
+      if (nx) nx.addEventListener('click', function () {
+        var v = [].map.call(s.querySelectorAll('input:checked'), function (x) { return x.value; });
+        if (!v.length) return;
+        C.answers[s.dataset.q] = v; if (i === 0) track('quiz_start'); go(i + 1);
+      });
+      var b = s.querySelector('.back'); if (b) b.addEventListener('click', function () { go(i - 1); });
+    });
+    // Внешние входы в квиз: data-pick="вопрос|ответ" — заполняет шаг и открывает следующий
+    document.querySelectorAll('[data-pick]').forEach(function (el) {
+      el.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        var p = el.getAttribute('data-pick').split('|'), idx = steps.findIndex(function (s) { return s.dataset.q === p[0]; });
+        C.answers[p[0]] = p[1];
+        steps[idx].querySelectorAll('.opt').forEach(function (o) { o.classList.toggle('sel', txt(o) === p[1]); });
+        track('quiz_start', { from: 'pick' });
+        go(idx + 1);
+        document.getElementById('lead').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    go(0);
+  }
+
+  // --- Страны: код подставляется в телефон ---
+  var COUNTRIES = [
+    ['Казахстан','+7'],['Украина','+380'],['Узбекистан','+998'],['Кыргызстан','+996'],['Азербайджан','+994'],
+    ['Грузия','+995'],['Армения','+374'],['Молдова','+373'],['Беларусь','+375'],['Россия','+7'],
+    ['Латвия','+371'],['Литва','+370'],['Эстония','+372'],['Польша','+48'],['Германия','+49'],
+    ['Италия','+39'],['Израиль','+972'],['ОАЭ','+971'],['Другая страна','+']
+  ];
+  var sel = document.getElementById('country'), phone = document.getElementById('phone');
+  if (sel) {
+    COUNTRIES.forEach(function (c, i) {
+      var o = document.createElement('option'); o.value = i; o.textContent = c[0] + ' ' + (c[1] === '+' ? '' : c[1]); sel.appendChild(o);
+    });
+    var setCode = function () {
+      var code = COUNTRIES[sel.value][1], v = phone.value.replace(/^\+\d*\s?/, '');
+      phone.value = code + (code === '+' ? '' : ' ') + v;
+    };
+    sel.addEventListener('change', setCode); setCode();
+  }
+
+  // --- Форма ---
+  var form = document.getElementById('leadForm'), started = false;
+  if (!form) return;
+  form.addEventListener('focusin', function () { if (!started) { started = true; track('form_start'); } });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var err = form.querySelector('.err'); err.textContent = '';
+    var f = form.elements;
+    var name = f.fullname.value.trim(), tel = phone.value.trim(), digits = tel.replace(/\D/g, '');
+    if (name.length < 2) { err.textContent = 'Напишите, как к вам обращаться'; f.fullname.focus(); return; }
+    if (digits.length < 9) { err.textContent = 'Проверьте номер — нужен номер с кодом страны'; phone.focus(); return; }
+    if (!f.agree.checked) { err.textContent = 'Нужно согласие на обработку данных'; return; }
+
+    // Открытый вопрос: чем подробнее человек описывает запрос, тем он теплее. Пороги — гипотеза, сверить по продажам
+    var request = (f.request ? f.request.value : '').trim();
+    var words = (request.match(/[A-Za-zА-Яа-яЁёІіЇїЄєҐґ0-9]+/g) || []).length;
+    var tier = words === 0 ? 'пусто' : words <= 5 ? 'коротко' : words <= 20 ? 'средне' : 'подробно';
+
+    var eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+    var payload = {
+      landing: C.LANDING, name: name, phone: tel,
+      request_text: request, request_words: words, request_tier: tier,
+      extra: [].reduce.call(form.querySelectorAll('[data-extra]'), function (o, el) { o[el.name] = el.value.trim(); return o; }, {}),
+      country: COUNTRIES[sel.value][0], messenger: f.messenger.value,
+      answers: C.getAnswers ? C.getAnswers() : C.answers, utm: utm,
+      page: location.href, event_id: eventId, ts: new Date().toISOString()
+    };
+    var btn = form.querySelector('button[type=submit]'); btn.disabled = true; btn.textContent = 'Отправляем…';
+
+    var done = function () {
+      try { if (window.fbq) fbq('track', 'Lead', { content_name: C.LANDING, request_words: words, request_tier: tier }, { eventID: eventId }); } catch (e) {}
+      track('lead_submit', { request_words: words, request_tier: tier });
+      if (tier === 'подробно') track('lead_detailed', { request_words: words });   // для конверсии «тёплая заявка» в Meta
+      showThanks(payload);
+    };
+    if (!C.WEBHOOK_URL) { console.warn('WEBHOOK_URL не задан — заявка не ушла в CRM', payload); done(); return; }
+    fetch(C.WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+      .then(done)
+      .catch(function () {
+        btn.disabled = false; btn.textContent = C.SUBMIT_TEXT;
+        err.textContent = 'Не получилось отправить. Напишите нам в WhatsApp — кнопка ниже.';
+        form.querySelector('.fallback').hidden = false;
+      });
+  });
+
+  form.querySelector('.fallback').href = 'https://wa.me/' + C.WHATSAPP;
+
+  function showThanks(p) {
+    var box = document.getElementById('thanks');
+    form.hidden = true; box.hidden = false;
+    box.parentElement.querySelectorAll(':scope > h3, :scope > .back, :scope > .stepno').forEach(function (el) { el.hidden = true; });
+    var msg = C.waText(p) + (p.request_text ? '\n\nМой запрос: ' + p.request_text : '');
+    box.querySelector('.wa').href = 'https://wa.me/' + C.WHATSAPP + '?text=' + encodeURIComponent(msg);
+    var ch = box.querySelector('.channel'); if (ch) { if (C.CHANNEL_URL) ch.href = C.CHANNEL_URL; else ch.hidden = true; }
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (sticky) sticky.remove();
+  }
+})();
+</script>
+<script>
+(function () {
+  var f = document.getElementById('calc'), out = f.querySelector('#areaOut'), list = document.getElementById('sumList'), touched = false;
+  function render() {
+    var a = LP.getAnswers();
+    out.textContent = a.area_m2 + ' м²';
+    list.innerHTML = [
+      ['Площадь зала', a.area_m2 + ' м²'],
+      ['Категории', a.categories.join(', ') || 'не выбраны'],
+      ['Формат', a.mode],
+      ['Доставка', a.delivery_country],
+      ['Помещение', a.place]
+    ].map(function (r) { return '<div class="row sumrow"><span>' + r[0] + '</span><b>' + r[1] + '</b></div>'; }).join('');
+  }
+  f.addEventListener('input', function () { if (!touched) { touched = true; track('calc_start'); } render(); });
+  render();
+})();
+</script>
+</body>
+</html>
