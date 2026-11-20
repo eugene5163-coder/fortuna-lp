@@ -820,6 +820,8 @@ window.LP = {
       track('lead_submit', { request_words: words, request_tier: tier });
       if (tier === 'подробно') track('lead_detailed', { request_words: words });   // для конверсии «тёплая заявка» в Meta
       showThanks(payload);
+      // после заявки ведём на общую страницу «Спасибо» сайта (как на /premium/); пауза — чтобы пиксель успел отправить Lead
+      setTimeout(function () { location.href = 'https://shopitaly.biz/spasibo/'; }, 900);
     };
     if (!C.WEBHOOK_URL) { console.warn('WEBHOOK_URL не задан — заявка не ушла в CRM', payload); done(); return; }
     fetch(C.WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
