@@ -490,8 +490,8 @@ footer .wm{font:800 16px var(--sans);letter-spacing:.12em}
 <section id="lead" class="bg-sand">
   <div class="wrap">
     <div class="head">
-      <span class="over">4 вопроса</span>
-      <h2>Ответьте на 4 вопроса, и мы точнее будем знать, <em>какой формат закупки вам подходит</em></h2>
+      <span class="over">3 вопроса</span>
+      <h2>Ответьте на 3 вопроса, и мы точнее будем знать, <em>какой формат закупки вам подходит</em></h2>
       <p class="lead">Предзаказ осень-зима 27-28, готовый склад или подготовка к открытию магазина. После этого отправим не общий каталог, а предложение под вашу ситуацию.</p>
     </div>
     <div class="leadwrap">
@@ -532,17 +532,6 @@ footer .wm{font:800 16px var(--sans);letter-spacing:.12em}
             <label class="chip"><input type="checkbox" value="Сумки и аксессуары"><b>Сумки и аксессуары</b></label>
           </div>
           <button class="btn wide next">Дальше</button>
-          <button class="back">← Назад</button>
-        </div>
-        <div class="step" data-q="budget">
-          <p class="stepno"></p>
-          <h3>Какой бюджет закупки на сезон?</h3>
-          <div class="opts">
-            <button class="opt">До 20 000 €</button>
-            <button class="opt">20 000 – 50 000 €</button>
-            <button class="opt">50 000 – 100 000 €</button>
-            <button class="opt">Более 100 000 €</button>
-          </div>
           <button class="back">← Назад</button>
         </div>
         <div class="step" data-q="contact">
@@ -739,7 +728,7 @@ window.LP = {
   waText: function (p) {
     var a = p.answers;
     return 'Здравствуйте! Хочу предложения на осень-зиму 27-28.\nФормат: ' + (a.format || '—') + '\nМагазин: ' + (a.shop || '—') +
-      '\nСегмент: ' + ((a.segment || []).join(', ') || '—') + '\nБюджет: ' + (a.budget || '—') + '\nСтрана: ' + p.country;
+      '\nСегмент: ' + ((a.segment || []).join(', ') || '—') + '\nСтрана: ' + p.country;
   }
 };
 </script>
